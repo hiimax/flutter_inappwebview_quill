@@ -1,6 +1,6 @@
 name: flutter_inappwebview_quill
 description: A fork of flutter_inappwebview made to work on Xcode 14 and iOS 16 betas
-version: 5.4.5
+version: 5.4.6
 homepage: https://github.com/garv-shah/flutter_inappwebview
 
 environment:

@@ -1,3 +1,7 @@
+## 5.4.6
+
+- Fix podspec issue
+
 ## 5.4.5
 
 - Attempt to fix undefined main class
