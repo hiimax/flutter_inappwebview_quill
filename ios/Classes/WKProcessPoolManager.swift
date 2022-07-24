@@ -1,6 +1,6 @@
 //
 //  WKProcessPoolManager.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 19/11/2019.
 //

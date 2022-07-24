@@ -1,6 +1,6 @@
 //
 //  LeakAvoider.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 15/12/2019.
 //
@@ -9,16 +9,16 @@ import Foundation
 
 public class LeakAvoider: NSObject {
     weak var delegate : FlutterMethodCallDelegate?
-    
+
     init(delegate: FlutterMethodCallDelegate) {
         super.init()
         self.delegate = delegate
     }
-    
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         self.delegate?.handle(call, result: result)
     }
-    
+
     deinit {
         print("LeakAvoider - dealloc")
     }

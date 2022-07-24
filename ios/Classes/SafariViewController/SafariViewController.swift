@@ -1,6 +1,6 @@
 //
 //  SafariViewController.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo on 25/09/18.
 //
@@ -10,26 +10,26 @@ import SafariServices
 
 @available(iOS 9.0, *)
 public class SafariViewController: SFSafariViewController, FlutterPlugin, SFSafariViewControllerDelegate {
-    
+
     var channel: FlutterMethodChannel?
     var safariOptions: SafariBrowserOptions?
     var id: String = ""
     var menuItemList: [[String: Any]] = []
-    
+
     public static func register(with registrar: FlutterPluginRegistrar) {
-        
+
     }
-    
+
     deinit {
         print("SafariViewController - dealloc")
         dispose()
     }
-    
+
     public func prepareMethodChannel() {
         channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_chromesafaribrowser_" + id, binaryMessenger: SwiftFlutterPlugin.instance!.registrar!.messenger())
         SwiftFlutterPlugin.instance!.registrar!.addMethodCallDelegate(self, channel: channel!)
     }
-    
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         // let arguments = call.arguments as? NSDictionary
         switch call.method {
@@ -41,29 +41,29 @@ public class SafariViewController: SFSafariViewController, FlutterPlugin, SFSafa
                 break
         }
     }
-    
+
     public override func viewWillAppear(_ animated: Bool) {
         // prepareSafariBrowser()
         super.viewWillAppear(animated)
         onChromeSafariBrowserOpened()
     }
-    
+
     public override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         self.onChromeSafariBrowserClosed()
         self.dispose()
     }
-    
-    
+
+
     func prepareSafariBrowser() {
         guard let safariOptions = safariOptions else {
             return
         }
-        
+
         if #available(iOS 11.0, *) {
             self.dismissButtonStyle = SFSafariViewController.DismissButtonStyle(rawValue: safariOptions.dismissButtonStyle)!
         }
-        
+
         if #available(iOS 10.0, *) {
             if let preferredBarTintColor = safariOptions.preferredBarTintColor, !preferredBarTintColor.isEmpty {
                 self.preferredBarTintColor = UIColor(hexString: preferredBarTintColor)
@@ -72,14 +72,14 @@ public class SafariViewController: SFSafariViewController, FlutterPlugin, SFSafa
                 self.preferredControlTintColor = UIColor(hexString: preferredControlTintColor)
             }
         }
-        
+
         self.modalPresentationStyle = UIModalPresentationStyle(rawValue: safariOptions.presentationStyle)!
         self.modalTransitionStyle = UIModalTransitionStyle(rawValue: safariOptions.transitionStyle)!
     }
-    
+
     func close(result: FlutterResult?) {
         dismiss(animated: true)
-        
+
         // wait for the animation
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400), execute: {() -> Void in
             if result != nil {
@@ -87,11 +87,11 @@ public class SafariViewController: SFSafariViewController, FlutterPlugin, SFSafa
             }
         })
     }
-    
+
     public func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         close(result: nil)
     }
-    
+
     public func safariViewController(_ controller: SFSafariViewController,
                               didCompleteInitialLoad didLoadSuccessfully: Bool) {
         if didLoadSuccessfully {
@@ -101,7 +101,7 @@ public class SafariViewController: SFSafariViewController, FlutterPlugin, SFSafa
             print("Cant load successfully the 'SafariViewController'.")
         }
     }
-    
+
     public func safariViewController(_ controller: SFSafariViewController, activityItemsFor URL: URL, title: String?) -> [UIActivity] {
         var uiActivities: [UIActivity] = []
         menuItemList.forEach { (menuItem) in
@@ -122,19 +122,19 @@ public class SafariViewController: SFSafariViewController, FlutterPlugin, SFSafa
 //        print("initialLoadDidRedirectTo")
 //        print(URL)
 //    }
-    
+
     public func onChromeSafariBrowserOpened() {
         channel?.invokeMethod("onChromeSafariBrowserOpened", arguments: [])
     }
-    
+
     public func onChromeSafariBrowserCompletedInitialLoad() {
         channel?.invokeMethod("onChromeSafariBrowserCompletedInitialLoad", arguments: [])
     }
-    
+
     public func onChromeSafariBrowserClosed() {
         channel?.invokeMethod("onChromeSafariBrowserClosed", arguments: [])
     }
-    
+
     public func dispose() {
         channel?.setMethodCallHandler(nil)
         channel = nil
@@ -150,7 +150,7 @@ class CustomUIActivity : UIActivity {
     var type: UIActivity.ActivityType?
     var label: String?
     var image: UIImage?
-    
+
     init(viewId: String, id: Int64, url: URL, title: String?, label: String?, type: UIActivity.ActivityType?, image: UIImage?) {
         self.viewId = viewId
         self.id = id
@@ -185,10 +185,10 @@ class CustomUIActivity : UIActivity {
         guard let registrar = SwiftFlutterPlugin.instance?.registrar else {
             return
         }
-        
+
         let channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_chromesafaribrowser_" + viewId,
                                            binaryMessenger: registrar.messenger())
-        
+
         let arguments: [String: Any?] = [
             "url": url.absoluteString,
             "title": title,

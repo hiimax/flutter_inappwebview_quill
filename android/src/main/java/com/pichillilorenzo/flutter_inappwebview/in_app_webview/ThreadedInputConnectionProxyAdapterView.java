@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.in_app_webview;
+package com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview;
 
 import android.os.Handler;
 import android.os.IBinder;

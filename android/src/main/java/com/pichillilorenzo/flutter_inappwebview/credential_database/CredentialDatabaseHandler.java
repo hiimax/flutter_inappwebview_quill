@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.credential_database;
+package com.pichillilorenzo.flutter_inappwebview_quill.credential_database;
 
 import android.os.Build;
 import android.webkit.WebViewDatabase;
@@ -7,9 +7,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview.types.URLCredential;
-import com.pichillilorenzo.flutter_inappwebview.types.URLProtectionSpace;
+import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.URLCredential;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.URLProtectionSpace;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ public class CredentialDatabaseHandler implements MethodChannel.MethodCallHandle
 
   public CredentialDatabaseHandler(final InAppWebViewFlutterPlugin plugin) {
     this.plugin = plugin;
-    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_credential_database");
+    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_credential_database");
     channel.setMethodCallHandler(this);
     credentialDatabase = CredentialDatabase.getInstance(plugin.applicationContext);
   }

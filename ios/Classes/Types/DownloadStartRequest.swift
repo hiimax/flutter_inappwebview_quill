@@ -1,6 +1,6 @@
 //
 //  DownloadStartRequest.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 17/04/22.
 //
@@ -15,7 +15,7 @@ public class DownloadStartRequest: NSObject {
     var contentLength: Int64
     var suggestedFilename: String?
     var textEncodingName: String?
-    
+
     public init(url: String, userAgent: String?, contentDisposition: String?,
                 mimeType: String?, contentLength: Int64,
                 suggestedFilename: String?, textEncodingName: String?) {
@@ -27,7 +27,7 @@ public class DownloadStartRequest: NSObject {
         self.suggestedFilename = suggestedFilename
         self.textEncodingName = textEncodingName
     }
-    
+
     public func toMap () -> [String:Any?] {
         return [
             "url": url,

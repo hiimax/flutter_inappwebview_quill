@@ -1,10 +1,10 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.content.Context;
 
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.FlutterWebView;
-import com.pichillilorenzo.flutter_inappwebview.types.PlatformWebView;
-import com.pichillilorenzo.flutter_inappwebview.types.WebViewImplementation;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.FlutterWebView;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.PlatformWebView;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.WebViewImplementation;
 
 import java.util.HashMap;
 
@@ -23,7 +23,7 @@ public class FlutterWebViewFactory extends PlatformViewFactory {
   @Override
   public PlatformView create(Context context, int id, Object args) {
     HashMap<String, Object> params = (HashMap<String, Object>) args;
-    
+
     PlatformWebView flutterWebView;
     WebViewImplementation implementation = WebViewImplementation.fromValue((Integer) params.get("implementation"));
     switch (implementation) {
@@ -32,7 +32,7 @@ public class FlutterWebViewFactory extends PlatformViewFactory {
         flutterWebView = new FlutterWebView(plugin, context, id, params);
     }
     flutterWebView.makeInitialLoad(params);
-    
+
     return flutterWebView;
   }
 }

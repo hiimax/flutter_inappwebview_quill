@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.os.Build;
 import android.util.Log;
@@ -34,7 +34,7 @@ public class ServiceWorkerManager implements MethodChannel.MethodCallHandler {
 
   public ServiceWorkerManager(final InAppWebViewFlutterPlugin plugin) {
     this.plugin = plugin;
-    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_android_serviceworkercontroller");
+    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_android_serviceworkercontroller");
     channel.setMethodCallHandler(this);
     if (WebViewFeature.isFeatureSupported(WebViewFeature.SERVICE_WORKER_BASIC_USAGE)) {
       serviceWorkerController = ServiceWorkerControllerCompat.getInstance();
@@ -119,7 +119,7 @@ public class ServiceWorkerManager implements MethodChannel.MethodCallHandler {
   private void setServiceWorkerClient(Boolean isNull) {
     if (serviceWorkerController != null) {
       // set ServiceWorkerClient as null makes the app crashes, so just set a dummy ServiceWorkerClientCompat.
-      // https://github.com/pichillilorenzo/flutter_inappwebview/issues/1151
+      // https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1151
       serviceWorkerController.setServiceWorkerClient(isNull ? dummyServiceWorkerClientCompat() : new ServiceWorkerClientCompat() {
         @Nullable
         @Override

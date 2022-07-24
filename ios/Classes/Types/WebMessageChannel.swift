@@ -1,6 +1,6 @@
 //
 //  WebMessageChannel.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 10/03/21.
 //
@@ -12,11 +12,11 @@ public class WebMessageChannel : FlutterMethodCallDelegate {
     var channel: FlutterMethodChannel?
     var webView: InAppWebView?
     var ports: [WebMessagePort] = []
-    
+
     public init(id: String) {
         self.id = id
         super.init()
-        self.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_web_message_channel_" + id,
+        self.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_quill_web_message_channel_" + id,
                                        binaryMessenger: SwiftFlutterPlugin.instance!.registrar!.messenger())
         self.channel?.setMethodCallHandler(self.handle)
         self.ports = [
@@ -24,7 +24,7 @@ public class WebMessageChannel : FlutterMethodCallDelegate {
             WebMessagePort(name: "port2", webMessageChannel: self)
         ]
     }
-    
+
     public func initJsInstance(webView: InAppWebView, completionHandler: ((WebMessageChannel) -> Void)? = nil) {
         self.webView = webView
         if let webView = self.webView {
@@ -39,10 +39,10 @@ public class WebMessageChannel : FlutterMethodCallDelegate {
             completionHandler?(self)
         }
     }
-    
+
     public override func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? NSDictionary
-        
+
         switch call.method {
         case "setWebMessageCallback":
             if let _ = webView, ports.count > 0 {
@@ -55,7 +55,7 @@ public class WebMessageChannel : FlutterMethodCallDelegate {
                 } catch let error as NSError {
                     result(FlutterError(code: "WebMessageChannel", message: error.domain, details: nil))
                 }
-                
+
             } else {
                result(true)
             }
@@ -65,7 +65,7 @@ public class WebMessageChannel : FlutterMethodCallDelegate {
                 let index = arguments!["index"] as! Int
                 let port = ports[index]
                 let message = arguments!["message"] as! [String: Any?]
-                
+
                 var webMessagePorts: [WebMessagePort] = []
                 let portsMap = message["ports"] as? [[String: Any?]]
                 if let portsMap = portsMap {
@@ -109,7 +109,7 @@ public class WebMessageChannel : FlutterMethodCallDelegate {
             break
         }
     }
-    
+
     public func onMessage(index: Int64, message: String?) {
         let arguments: [String:Any?] = [
             "index": index,
@@ -117,13 +117,13 @@ public class WebMessageChannel : FlutterMethodCallDelegate {
         ]
         channel?.invokeMethod("onMessage", arguments: arguments)
     }
-    
+
     public func toMap () -> [String:Any?] {
         return [
             "id": id
         ]
     }
-    
+
     public func dispose() {
         channel?.setMethodCallHandler(nil)
         channel = nil
@@ -143,7 +143,7 @@ public class WebMessageChannel : FlutterMethodCallDelegate {
         """)
         webView = nil
     }
-    
+
     deinit {
         print("WebMessageChannel - dealloc")
         dispose()

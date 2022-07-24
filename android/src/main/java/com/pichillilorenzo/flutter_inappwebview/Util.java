@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.content.Context;
 import android.content.res.AssetManager;

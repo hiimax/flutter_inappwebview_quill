@@ -3,8 +3,8 @@ import 'dart:collection';
 import 'dart:typed_data';
 
 import 'package:flutter/services.dart';
-import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:flutter_inappwebview/src/util.dart';
+import 'package:flutter_inappwebview_quill/flutter_inappwebview_quill.dart';
+import 'package:flutter_inappwebview_quill/src/util.dart';
 
 import '../context_menu.dart';
 import '../types.dart';

@@ -1,6 +1,6 @@
 //
 //  SafariBrowserOptions.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo on 26/09/18.
 //
@@ -10,7 +10,7 @@ import Foundation
 @available(iOS 9.0, *)
 @objcMembers
 public class SafariBrowserOptions: Options<SafariViewController> {
-    
+
     var entersReaderIfAvailable = false
     var barCollapsingEnabled = false
     var dismissButtonStyle = 0 //done
@@ -18,11 +18,11 @@ public class SafariBrowserOptions: Options<SafariViewController> {
     var preferredControlTintColor: String?
     var presentationStyle = 0 //fullscreen
     var transitionStyle = 0 //crossDissolve
-    
+
     override init(){
         super.init()
     }
-    
+
     override func getRealOptions(obj: SafariViewController?) -> [String: Any?] {
         var realOptions: [String: Any?] = toMap()
         if let safariViewController = obj {

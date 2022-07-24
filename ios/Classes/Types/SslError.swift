@@ -1,6 +1,6 @@
 //
 //  SslError.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 15/02/21.
 //
@@ -10,10 +10,10 @@ import Foundation
 public class SslError: NSObject {
     var errorType: SecTrustResultType?
     var message: String?
-    
+
     public init(errorType: SecTrustResultType?) {
         self.errorType = errorType
-        
+
         var sslErrorMessage: String? = nil
         switch errorType {
             case .deny:
@@ -37,10 +37,10 @@ public class SslError: NSObject {
             default:
                 sslErrorMessage = nil
         }
-        
+
         self.message = sslErrorMessage
     }
-    
+
     public func toMap () -> [String:Any?] {
         return [
             "iosError": errorType?.rawValue,

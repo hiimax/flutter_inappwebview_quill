@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import androidx.core.content.FileProvider;
 

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs;
+package com.pichillilorenzo.flutter_inappwebview_quill.chrome_custom_tabs;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -17,9 +17,9 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.customtabs.CustomTabsService;
 import androidx.browser.customtabs.CustomTabsSession;
 
-import com.pichillilorenzo.flutter_inappwebview.R;
-import com.pichillilorenzo.flutter_inappwebview.types.CustomTabsActionButton;
-import com.pichillilorenzo.flutter_inappwebview.types.CustomTabsMenuItem;
+import com.pichillilorenzo.flutter_inappwebview_quill.R;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.CustomTabsActionButton;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.CustomTabsMenuItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,7 +57,7 @@ public class ChromeCustomTabsActivity extends Activity implements MethodChannel.
 
     Bundle b = getIntent().getExtras();
     if (b == null) return;
-    
+
     id = b.getString("id");
 
     String managerId = b.getString("managerId");
@@ -76,7 +76,7 @@ public class ChromeCustomTabsActivity extends Activity implements MethodChannel.
     for (Map<String, Object> menuItem : menuItemList) {
       menuItems.add(CustomTabsMenuItem.fromMap(menuItem));
     }
-    
+
     final ChromeCustomTabsActivity chromeCustomTabsActivity = this;
 
     customTabActivityHelper.setConnectionCallback(new CustomTabActivityHelper.ConnectionCallback() {
@@ -148,7 +148,7 @@ public class ChromeCustomTabsActivity extends Activity implements MethodChannel.
         }
 
         dispose();
-        
+
         result.success(true);
         break;
       default:
@@ -190,7 +190,7 @@ public class ChromeCustomTabsActivity extends Activity implements MethodChannel.
     builder.setInstantAppsEnabled(options.instantAppsEnabled);
 
     for (CustomTabsMenuItem menuItem : menuItems) {
-      builder.addMenuItem(menuItem.getLabel(), 
+      builder.addMenuItem(menuItem.getLabel(),
               createPendingIntent(menuItem.getId()));
     }
 

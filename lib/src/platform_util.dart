@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 class PlatformUtil {
   static PlatformUtil? _instance;
   static const MethodChannel _channel = const MethodChannel(
-      'com.pichillilorenzo/flutter_inappwebview_platformutil');
+      'com.pichillilorenzo/flutter_inappwebview_quill_platformutil');
 
   static PlatformUtil instance() {
     return (_instance != null) ? _instance! : _init();

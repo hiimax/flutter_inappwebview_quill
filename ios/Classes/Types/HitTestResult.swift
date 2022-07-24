@@ -1,6 +1,6 @@
 //
 //  HitTestResult.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 16/02/21.
 //
@@ -21,12 +21,12 @@ public enum HitTestResultType: Int {
 public class HitTestResult: NSObject {
     var type: HitTestResultType
     var extra: String?
-    
+
     public init(type: HitTestResultType, extra: String?) {
         self.type = type
         self.extra = extra
     }
-    
+
     public static func fromMap(map: [String:Any?]?) -> HitTestResult? {
         guard let map = map else {
             return nil
@@ -34,7 +34,7 @@ public class HitTestResult: NSObject {
         let type = HitTestResultType.init(rawValue: map["type"] as? Int ?? HitTestResultType.unknownType.rawValue) ?? HitTestResultType.unknownType
         return HitTestResult(type: type, extra: map["extra"] as? String)
     }
-    
+
     public func toMap () -> [String:Any?] {
         return [
             "type": type.rawValue,

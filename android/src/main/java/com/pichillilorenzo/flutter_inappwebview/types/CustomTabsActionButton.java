@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.types;
+package com.pichillilorenzo.flutter_inappwebview_quill.types;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,7 +14,7 @@ public class CustomTabsActionButton {
 
   @NonNull
   private String description;
-  
+
   private boolean shouldTint;
 
   public CustomTabsActionButton(int id, @NonNull byte[] icon, @NonNull String description, boolean shouldTint) {

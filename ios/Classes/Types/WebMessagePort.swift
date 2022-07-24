@@ -1,6 +1,6 @@
 //
 //  WebMessagePort.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 10/03/21.
 //
@@ -13,13 +13,13 @@ public class WebMessagePort : NSObject {
     var isClosed = false
     var isTransferred = false
     var isStarted = false
-    
+
     public init(name: String, webMessageChannel: WebMessageChannel) {
         self.name = name
         super.init()
         self.webMessageChannel = webMessageChannel
     }
-    
+
     public func setWebMessageCallback(completionHandler: ((Any?) -> Void)? = nil) throws {
         if isClosed || isTransferred {
             throw NSError(domain: "Port is already closed or transferred", code: 0)
@@ -47,7 +47,7 @@ public class WebMessagePort : NSObject {
             completionHandler?(nil)
         }
     }
-    
+
     public func postMessage(message: WebMessage, completionHandler: ((Any?) -> Void)? = nil) throws {
         if isClosed || isTransferred {
             throw NSError(domain: "Port is already closed or transferred", code: 0)
@@ -88,7 +88,7 @@ public class WebMessagePort : NSObject {
         }
         message.dispose()
     }
-    
+
     public func close(completionHandler: ((Any?) -> Void)? = nil) throws {
         if isTransferred {
             throw NSError(domain: "Port is already transferred", code: 0)
@@ -110,12 +110,12 @@ public class WebMessagePort : NSObject {
             completionHandler?(nil)
         }
     }
-    
+
     public func dispose() {
         isClosed = true
         webMessageChannel = nil
     }
-    
+
     deinit {
         print("WebMessagePort - dealloc")
         dispose()

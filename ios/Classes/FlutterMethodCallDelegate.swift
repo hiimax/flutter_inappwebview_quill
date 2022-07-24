@@ -1,6 +1,6 @@
 //
 //  FlutterMethodCallDelegate.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 15/12/2019.
 //
@@ -11,8 +11,8 @@ public class FlutterMethodCallDelegate: NSObject {
     public override init() {
         super.init()
     }
-    
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        
+
     }
 }

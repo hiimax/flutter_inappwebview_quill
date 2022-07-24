@@ -1,6 +1,6 @@
 //
 //  UIColor.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 19/02/21.
 //
@@ -25,7 +25,7 @@ extension UIColor {
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
     }
-    
+
     var hexString: String? {
         var red: CGFloat = 0
         var green: CGFloat = 0

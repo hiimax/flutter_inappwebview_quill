@@ -3,7 +3,7 @@
 # Run `pod lib lint flutterplugintest.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'flutter_inappwebview'
+  s.name             = 'flutter_inappwebview_quill'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter plugin.'
   s.description      = <<-DESC
@@ -23,9 +23,9 @@ A new Flutter plugin.
   s.swift_version = '5.0'
 
   s.dependency 'OrderedSet', '~>5.0'
-  
+
   s.default_subspec = 'Core'
-  
+
   s.subspec 'Core' do |core|
     core.platform = :ios, '8.0'
   end

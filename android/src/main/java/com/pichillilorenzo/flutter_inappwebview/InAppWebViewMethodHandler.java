@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.net.Uri;
 import android.os.Build;
@@ -11,20 +11,20 @@ import androidx.webkit.WebMessagePortCompat;
 import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
 
-import com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserActivity;
-import com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserOptions;
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebView;
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebViewOptions;
-import com.pichillilorenzo.flutter_inappwebview.types.ContentWorld;
-import com.pichillilorenzo.flutter_inappwebview.types.HitTestResult;
-import com.pichillilorenzo.flutter_inappwebview.types.InAppWebViewInterface;
-import com.pichillilorenzo.flutter_inappwebview.types.SslCertificateExt;
-import com.pichillilorenzo.flutter_inappwebview.types.URLRequest;
-import com.pichillilorenzo.flutter_inappwebview.types.UserScript;
-import com.pichillilorenzo.flutter_inappwebview.types.WebMessage;
-import com.pichillilorenzo.flutter_inappwebview.types.WebMessageChannel;
-import com.pichillilorenzo.flutter_inappwebview.types.WebMessageListener;
-import com.pichillilorenzo.flutter_inappwebview.types.WebMessagePort;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser.InAppBrowserActivity;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser.InAppBrowserOptions;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebView;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebViewOptions;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.ContentWorld;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.HitTestResult;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.InAppWebViewInterface;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.SslCertificateExt;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.URLRequest;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.UserScript;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.WebMessage;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.WebMessageChannel;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.WebMessageListener;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.WebMessagePort;
 
 import java.io.IOException;
 import java.util.ArrayList;

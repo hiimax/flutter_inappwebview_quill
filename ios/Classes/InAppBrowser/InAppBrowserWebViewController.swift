@@ -1,6 +1,6 @@
 //
 //  InAppBrowserWebViewController.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo on 17/09/18.
 //
@@ -11,7 +11,7 @@ import WebKit
 import Foundation
 
 public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelegate, UIScrollViewDelegate, WKUIDelegate, UISearchBarDelegate {
-    
+
     var closeButton: UIBarButtonItem!
     var reloadButton: UIBarButtonItem!
     var backButton: UIBarButtonItem!
@@ -19,7 +19,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
     var shareButton: UIBarButtonItem!
     var searchBar: UISearchBar!
     var progressBar: UIProgressView!
-    
+
     var tmpWindow: UIWindow?
     var id: String = ""
     var windowId: Int64?
@@ -41,12 +41,12 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
 
     public override func loadView() {
         channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappbrowser_" + id, binaryMessenger: SwiftFlutterPlugin.instance!.registrar!.messenger())
-        
+
         var userScripts: [UserScript] = []
         for intialUserScript in initialUserScripts {
             userScripts.append(UserScript.fromMap(map: intialUserScript, windowId: windowId)!)
         }
-        
+
         let preWebviewConfiguration = InAppWebView.preWKWebViewConfiguration(options: webViewOptions)
         if let wId = windowId, let webViewTransport = InAppWebView.windowWebViews[wId] {
             webView = webViewTransport.webView
@@ -61,11 +61,11 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
                                         userScripts: userScripts)
         }
         webView.inAppBrowserDelegate = self
-        
+
         methodCallDelegate = InAppWebViewMethodHandler(webView: webView!)
         channel!.setMethodCallHandler(LeakAvoider(delegate: methodCallDelegate!).handle)
-        
-        let pullToRefreshLayoutChannel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_pull_to_refresh_" + id,
+
+        let pullToRefreshLayoutChannel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_quill_pull_to_refresh_" + id,
                                                               binaryMessenger: SwiftFlutterPlugin.instance!.registrar!.messenger())
         let pullToRefreshOptions = PullToRefreshOptions()
         let _ = pullToRefreshOptions.parse(options: pullToRefreshInitialOptions)
@@ -73,23 +73,23 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         webView.pullToRefreshControl = pullToRefreshControl
         pullToRefreshControl.delegate = webView
         pullToRefreshControl.prepare()
-        
+
         prepareWebView()
         webView.windowCreated = true
-        
+
         progressBar = UIProgressView(progressViewStyle: .bar)
-        
+
         view = UIView()
         view.addSubview(webView)
         view.insertSubview(progressBar, aboveSubview: webView)
     }
-    
+
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         webView.translatesAutoresizingMaskIntoConstraints = false
         progressBar.translatesAutoresizingMaskIntoConstraints = false
-        
+
         if #available(iOS 9.0, *) {
             webView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0.0).isActive = true
             webView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0.0).isActive = true
@@ -106,14 +106,14 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
                 NSLayoutConstraint(item: webView!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0),
                 NSLayoutConstraint(item: webView!, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0)
             ])
-            
+
             view.addConstraints([
                 NSLayoutConstraint(item: progressBar!, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0),
                 NSLayoutConstraint(item: progressBar!, attribute: .left, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1, constant: 0),
                 NSLayoutConstraint(item: progressBar!, attribute: .right, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1, constant: 0)
             ])
         }
-        
+
         if let wId = windowId, let webViewTransport = InAppWebView.windowWebViews[wId] {
             webView.load(webViewTransport.request)
         } else {
@@ -142,11 +142,11 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
                     }
                 }
             }
-            
+
             initLoad()
         }
     }
-    
+
     public func initLoad() {
         if let initialFile = initialFile {
             do {
@@ -179,38 +179,38 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         }
         onBrowserCreated()
     }
-    
+
     deinit {
         print("InAppBrowserWebViewController - dealloc")
         dispose()
     }
-    
+
     public override func viewDidDisappear(_ animated: Bool) {
         dispose()
         super.viewDidDisappear(animated)
     }
-    
+
     public override func viewWillDisappear (_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
-    
+
     public func prepareNavigationControllerBeforeViewWillAppear() {
         if let browserOptions = browserOptions {
             navigationController?.modalPresentationStyle = UIModalPresentationStyle(rawValue: browserOptions.presentationStyle)!
             navigationController?.modalTransitionStyle = UIModalTransitionStyle(rawValue: browserOptions.transitionStyle)!
         }
     }
-    
+
     public func prepareWebView() {
         webView.options = webViewOptions
         webView.prepare()
-              
+
         searchBar = UISearchBar()
         searchBar.keyboardType = .URL
         searchBar.sizeToFit()
         searchBar.delegate = self
         navigationItem.titleView = searchBar
-        
+
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         reloadButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(reload))
         shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(share))
@@ -218,7 +218,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         forwardButton.isEnabled = false
         backButton = UIBarButtonItem(title: "\u{2039}", style: .plain, target: self, action: #selector(goBack))
         backButton.isEnabled = false
-        
+
         for state: UIControl.State in [.normal, .disabled, .highlighted, .selected] {
             forwardButton.setTitleTextAttributes([
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: 50.0),
@@ -229,9 +229,9 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
                 NSAttributedString.Key.baselineOffset: 2.5
             ], for: state)
         }
-        
+
         toolbarItems = [backButton, spacer, forwardButton, spacer, shareButton, spacer, reloadButton]
-        
+
         if let browserOptions = browserOptions {
             if !browserOptions.hideToolbarTop {
                 navigationController?.navigationBar.isHidden = false
@@ -252,7 +252,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
             else {
                 navigationController?.navigationBar.isHidden = true
             }
-            
+
             if !browserOptions.hideToolbarBottom {
                 navigationController?.isToolbarHidden = false
                 if let bgColor = browserOptions.toolbarBottomBackgroundColor, !bgColor.isEmpty {
@@ -266,25 +266,25 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
             else {
                 navigationController?.isToolbarHidden = true
             }
-            
+
             if let closeButtonCaption = browserOptions.closeButtonCaption, !closeButtonCaption.isEmpty {
                 closeButton = UIBarButtonItem(title: closeButtonCaption, style: .plain, target: self, action: #selector(close))
             } else {
                 setDefaultCloseButton()
             }
-            
+
             if let closeButtonColor = browserOptions.closeButtonColor, !closeButtonColor.isEmpty {
                 closeButton.tintColor = UIColor(hexString: closeButtonColor)
             }
-            
+
             if browserOptions.hideProgressBar {
                 progressBar.isHidden = true
             }
         }
-        
+
         navigationItem.rightBarButtonItem = closeButton
     }
-    
+
     func setDefaultCloseButton() {
         if closeButton != nil {
             closeButton.target = nil
@@ -296,13 +296,13 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
             closeButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(close))
         }
     }
-    
+
     public func didChangeTitle(title: String?) {
         guard let _ = title else {
             return
         }
     }
-    
+
     public func didStartNavigation(url: URL?) {
         forwardButton.isEnabled = webView.canGoForward
         backButton.isEnabled = webView.canGoBack
@@ -312,7 +312,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         }
         searchBar.text = url.absoluteString
     }
-    
+
     public func didUpdateVisitedHistory(url: URL?) {
         forwardButton.isEnabled = webView.canGoForward
         backButton.isEnabled = webView.canGoBack
@@ -321,7 +321,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         }
         searchBar.text = url.absoluteString
     }
-    
+
     public func didFinishNavigation(url: URL?) {
         forwardButton.isEnabled = webView.canGoForward
         backButton.isEnabled = webView.canGoBack
@@ -331,17 +331,17 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         }
         searchBar.text = url.absoluteString
     }
-    
+
     public func didFailNavigation(url: URL?, error: Error) {
         forwardButton.isEnabled = webView.canGoForward
         backButton.isEnabled = webView.canGoBack
         progressBar.setProgress(0.0, animated: false)
     }
-    
+
     public func didChangeProgress(progress: Double) {
         progressBar.setProgress(Float(progress), animated: true)
     }
-    
+
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text,
               let urlEncoded = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
@@ -351,7 +351,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         let request = URLRequest(url: url)
         webView.load(request)
     }
-    
+
     public func show(completion: (() -> Void)? = nil) {
         if let navController = navigationController as? InAppBrowserNavigationController, let window = navController.tmpWindow {
             window.alpha = 0.0
@@ -378,17 +378,17 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
             }
         }
     }
-    
+
     @objc public func reload() {
         webView.reload()
         didUpdateVisitedHistory(url: webView.url)
     }
-    
+
     @objc public func share() {
         let vc = UIActivityViewController(activityItems: [webView.url?.absoluteString ?? ""], applicationActivities: [])
         present(vc, animated: true, completion: nil)
     }
-    
+
     public func close(completion: (() -> Void)? = nil) {
         if (navigationController?.responds(to: #selector(getter: navigationController?.presentingViewController)))! {
             navigationController?.presentingViewController?.dismiss(animated: true, completion: {() -> Void in
@@ -401,7 +401,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
             })
         }
     }
-    
+
     @objc public func close() {
         if (navigationController?.responds(to: #selector(getter: navigationController?.presentingViewController)))! {
             navigationController?.presentingViewController?.dismiss(animated: true, completion: nil)
@@ -410,29 +410,29 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
             navigationController?.parent?.dismiss(animated: true, completion: nil)
         }
     }
-    
+
     @objc public func goBack() {
         if webView.canGoBack {
             webView.goBack()
         }
     }
-    
+
     @objc public func goForward() {
         if webView.canGoForward {
             webView.goForward()
         }
     }
-    
+
     @objc public func goBackOrForward(steps: Int) {
         webView.goBackOrForward(steps: steps)
     }
 
     public func setOptions(newOptions: InAppBrowserOptions, newOptionsMap: [String: Any]) {
-        
+
         let newInAppWebViewOptions = InAppWebViewOptions()
         let _ = newInAppWebViewOptions.parse(options: newOptionsMap)
         self.webView.setOptions(newOptions: newInAppWebViewOptions, newOptionsMap: newOptionsMap)
-        
+
         if newOptionsMap["hidden"] != nil, browserOptions?.hidden != newOptions.hidden {
             if newOptions.hidden {
                 hide()
@@ -457,7 +457,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
                 navigationController?.navigationBar.backgroundColor = nil
             }
         }
-        
+
         if newOptionsMap["toolbarTopBarTintColor"] != nil, browserOptions?.toolbarTopBarTintColor != newOptions.toolbarTopBarTintColor {
             if let barTintColor = newOptions.toolbarTopBarTintColor, !barTintColor.isEmpty {
                 navigationController?.navigationBar.barTintColor = UIColor(hexString: barTintColor)
@@ -465,7 +465,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
                 navigationController?.navigationBar.barTintColor = nil
             }
         }
-        
+
         if newOptionsMap["toolbarTopTintColor"] != nil, browserOptions?.toolbarTopTintColor != newOptions.toolbarTopTintColor {
             if let tintColor = newOptions.toolbarTopTintColor, !tintColor.isEmpty {
                 navigationController?.navigationBar.tintColor = UIColor(hexString: tintColor)
@@ -485,7 +485,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
                 navigationController?.toolbar.barTintColor = nil
             }
         }
-        
+
         if newOptionsMap["toolbarBottomTintColor"] != nil, browserOptions?.toolbarBottomTintColor != newOptions.toolbarBottomTintColor {
             if let tintColor = newOptions.toolbarBottomTintColor, !tintColor.isEmpty {
                 navigationController?.toolbar.tintColor = UIColor(hexString: tintColor)
@@ -497,7 +497,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         if newOptionsMap["toolbarTopTranslucent"] != nil, browserOptions?.toolbarTopTranslucent != newOptions.toolbarTopTranslucent {
             navigationController?.navigationBar.isTranslucent = newOptions.toolbarTopTranslucent
         }
-        
+
         if newOptionsMap["toolbarBottomTranslucent"] != nil, browserOptions?.toolbarBottomTranslucent != newOptions.toolbarBottomTranslucent {
             navigationController?.toolbar.isTranslucent = newOptions.toolbarBottomTranslucent
         }
@@ -523,23 +523,23 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
                 closeButton.tintColor = nil
             }
         }
-        
+
         if newOptionsMap["presentationStyle"] != nil, browserOptions?.presentationStyle != newOptions.presentationStyle {
             navigationController?.modalPresentationStyle = UIModalPresentationStyle(rawValue: newOptions.presentationStyle)!
         }
-        
+
         if newOptionsMap["transitionStyle"] != nil, browserOptions?.transitionStyle != newOptions.transitionStyle {
             navigationController?.modalTransitionStyle = UIModalTransitionStyle(rawValue: newOptions.transitionStyle)!
         }
-        
+
         if newOptionsMap["hideProgressBar"] != nil, browserOptions?.hideProgressBar != newOptions.hideProgressBar {
             progressBar.isHidden = newOptions.hideProgressBar
         }
-        
+
         self.browserOptions = newOptions
         self.webViewOptions = newInAppWebViewOptions
     }
-    
+
     public func getOptions() -> [String: Any?]? {
         let webViewOptionsMap = self.webView.getOptions()
         if (self.browserOptions == nil || webViewOptionsMap == nil) {
@@ -549,7 +549,7 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         optionsMap.merge(webViewOptionsMap!, uniquingKeysWith: { (current, _) in current })
         return optionsMap
     }
-    
+
     public func dispose() {
         onExit()
         channel?.setMethodCallHandler(nil)
@@ -570,11 +570,11 @@ public class InAppBrowserWebViewController: UIViewController, InAppBrowserDelega
         methodCallDelegate?.webView = nil
         methodCallDelegate = nil
     }
-    
+
     public func onBrowserCreated() {
         channel?.invokeMethod("onBrowserCreated", arguments: [])
     }
-    
+
     public func onExit() {
         channel?.invokeMethod("onExit", arguments: [])
     }

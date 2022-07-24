@@ -1,6 +1,6 @@
 //
 //  WKWindowFeatures.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 19/02/21.
 //

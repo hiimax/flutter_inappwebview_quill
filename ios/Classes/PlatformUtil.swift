@@ -1,6 +1,6 @@
 //
 //  PlatformUtil.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 01/03/21.
 //
@@ -10,21 +10,21 @@ import Foundation
 class PlatformUtil: NSObject, FlutterPlugin {
     static var registrar: FlutterPluginRegistrar?
     static var channel: FlutterMethodChannel?
-    
+
     static func register(with registrar: FlutterPluginRegistrar) {
-        
+
     }
-    
+
     init(registrar: FlutterPluginRegistrar) {
         super.init()
         InAppWebViewStatic.registrar = registrar
-        InAppWebViewStatic.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_platformutil", binaryMessenger: registrar.messenger())
+        InAppWebViewStatic.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_quill_platformutil", binaryMessenger: registrar.messenger())
         registrar.addMethodCallDelegate(self, channel: InAppWebViewStatic.channel!)
     }
-    
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? NSDictionary
-        
+
         switch call.method {
             case "getSystemVersion":
                 let device = UIDevice.current
@@ -42,25 +42,25 @@ class PlatformUtil: NSObject, FlutterPlugin {
                 break
         }
     }
-    
+
     static public func getLocaleFromString(locale: String?) -> Locale {
         guard let locale = locale else {
             return Locale.init(identifier: "en_US")
         }
         return Locale.init(identifier: locale)
     }
-    
+
     static public func getDateFromMilliseconds(date: Int64) -> Date {
         return Date(timeIntervalSince1970: TimeInterval(Double(date)/1000))
     }
-    
+
     static public func formatDate(date: Int64, format: String, locale: Locale, timezone: TimeZone) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
         formatter.timeZone = timezone
         return formatter.string(from: PlatformUtil.getDateFromMilliseconds(date: date))
     }
-    
+
     public func dispose() {
         PlatformUtil.channel?.setMethodCallHandler(nil)
         PlatformUtil.channel = nil

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import androidx.annotation.Nullable;
 import androidx.webkit.WebViewFeature;
@@ -17,7 +17,7 @@ public class WebViewFeatureManager implements MethodChannel.MethodCallHandler {
 
   public WebViewFeatureManager(final InAppWebViewFlutterPlugin plugin) {
     this.plugin = plugin;
-    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_android_webviewfeature");
+    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_android_webviewfeature");
     channel.setMethodCallHandler(this);
   }
 

@@ -19,12 +19,12 @@
  *
  */
 
-package com.pichillilorenzo.flutter_inappwebview.headless_in_app_webview;
+package com.pichillilorenzo.flutter_inappwebview_quill.headless_in_app_webview;
 
 import androidx.annotation.Nullable;
 
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.FlutterWebView;
+import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.FlutterWebView;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -72,7 +72,7 @@ public class HeadlessInAppWebViewManager implements MethodChannel.MethodCallHand
     FlutterWebView flutterWebView = new FlutterWebView(plugin, plugin.activity, id, params);
     HeadlessInAppWebView headlessInAppWebView = new HeadlessInAppWebView(plugin, id, flutterWebView);
     HeadlessInAppWebViewManager.webViews.put(id, headlessInAppWebView);
-    
+
     headlessInAppWebView.prepare(params);
     headlessInAppWebView.onWebViewCreated();
     flutterWebView.makeInitialLoad(params);

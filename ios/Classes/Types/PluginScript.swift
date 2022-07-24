@@ -1,6 +1,6 @@
 //
 //  PluginScript.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 17/02/21.
 //
@@ -11,23 +11,23 @@ import WebKit
 public class PluginScript : UserScript {
     var requiredInAllContentWorlds = false
     var messageHandlerNames: [String] = []
-    
+
     public override init(source: String, injectionTime: WKUserScriptInjectionTime, forMainFrameOnly: Bool) {
         super.init(source: source, injectionTime: injectionTime, forMainFrameOnly: forMainFrameOnly)
     }
-    
+
     public init(groupName: String, source: String, injectionTime: WKUserScriptInjectionTime, forMainFrameOnly: Bool, requiredInAllContentWorlds: Bool = false, messageHandlerNames: [String] = []) {
         super.init(groupName: groupName, source: source, injectionTime: injectionTime, forMainFrameOnly: forMainFrameOnly)
         self.requiredInAllContentWorlds = requiredInAllContentWorlds
         self.messageHandlerNames = messageHandlerNames
     }
-    
+
     @available(iOS 14.0, *)
     public override init(source: String, injectionTime: WKUserScriptInjectionTime, forMainFrameOnly: Bool, in contentWorld: WKContentWorld) {
         super.init(source: source, injectionTime: injectionTime, forMainFrameOnly: forMainFrameOnly, in: contentWorld)
         self.contentWorld = contentWorld
     }
-    
+
     @available(iOS 14.0, *)
     public init(source: String, injectionTime: WKUserScriptInjectionTime, forMainFrameOnly: Bool, in contentWorld: WKContentWorld, requiredInAllContentWorlds: Bool = false, messageHandlerNames: [String] = []) {
         super.init(source: source, injectionTime: injectionTime, forMainFrameOnly: forMainFrameOnly, in: contentWorld)
@@ -41,7 +41,7 @@ public class PluginScript : UserScript {
         self.requiredInAllContentWorlds = requiredInAllContentWorlds
         self.messageHandlerNames = messageHandlerNames
     }
-    
+
     public func copyAndSet(groupName: String? = nil,
                            source: String? = nil,
                            injectionTime: WKUserScriptInjectionTime? = nil,
@@ -68,7 +68,7 @@ public class PluginScript : UserScript {
             messageHandlerNames: messageHandlerNames ?? self.messageHandlerNames
         )
     }
-    
+
     @available(iOS 14.0, *)
     public func copyAndSet(groupName: String? = nil,
                            source: String? = nil,

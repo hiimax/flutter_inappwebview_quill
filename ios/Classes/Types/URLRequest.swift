@@ -1,6 +1,6 @@
 //
 //  URLRequest.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 19/02/21.
 //
@@ -14,7 +14,7 @@ extension URLRequest {
         } else {
             self.init(url: URL(string: "about:blank")!)
         }
-        
+
         if let method = fromPluginMap["method"] as? String {
             httpMethod = method
         }
@@ -54,7 +54,7 @@ extension URLRequest {
             mainDocumentURL = URL(string: iosMainDocumentURL)!
         }
     }
-    
+
     public func toMap () -> [String:Any?] {
         var iosAllowsConstrainedNetworkAccess: Bool? = nil
         var iosAllowsExpensiveNetworkAccess: Bool? = nil

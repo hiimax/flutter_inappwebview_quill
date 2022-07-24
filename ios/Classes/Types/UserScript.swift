@@ -1,6 +1,6 @@
 //
 //  InAppWebViewUserScript.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 16/02/21.
 //
@@ -23,16 +23,16 @@ public class UserScript : WKUserScript {
       set { contentWorldWrapper = newValue }
     }
 
-    
+
     public override init(source: String, injectionTime: WKUserScriptInjectionTime, forMainFrameOnly: Bool) {
         super.init(source: source, injectionTime: injectionTime, forMainFrameOnly: forMainFrameOnly)
     }
-    
+
     public init(groupName: String?, source: String, injectionTime: WKUserScriptInjectionTime, forMainFrameOnly: Bool) {
         super.init(source: source, injectionTime: injectionTime, forMainFrameOnly: forMainFrameOnly)
         self.groupName = groupName
     }
-    
+
     @available(iOS 14.0, *)
     public override init(source: String, injectionTime: WKUserScriptInjectionTime, forMainFrameOnly: Bool, in contentWorld: WKContentWorld) {
         super.init(source: source, injectionTime: injectionTime, forMainFrameOnly: forMainFrameOnly, in: contentWorld)
@@ -45,12 +45,12 @@ public class UserScript : WKUserScript {
         self.groupName = groupName
         self.contentWorld = contentWorld
     }
-    
+
     public static func fromMap(map: [String:Any?]?, windowId: Int64?) -> UserScript? {
         guard let map = map else {
             return nil
         }
-        
+
         let contentWorldMap = map["contentWorld"] as? [String:Any?]
         if #available(iOS 14.0, *), let contentWorldMap = contentWorldMap {
             let contentWorld = WKContentWorld.fromMap(map: contentWorldMap, windowId: windowId)!

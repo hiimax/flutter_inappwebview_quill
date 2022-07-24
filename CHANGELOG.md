@@ -1,15 +1,19 @@
+## 5.4.4
+
+- Fixed Flutter In App Webview not working on iOS 16 or Xcode 14 betas
+
 ## 5.4.3+7
 
 - Fixed possible Android java.lang.NullPointerException in "InAppBrowserActivity.onCreateOptionsMenu" about "webView.getTitle()"
 
 ## 5.4.3+6
 
-- Fixed "iOS flutter_inappwebview/URLRequest.swift:13: Fatal error: Unexpectedly found nil while unwrapping an Optional value" [#1173](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1173)
+- Fixed "iOS flutter_inappwebview_quill/URLRequest.swift:13: Fatal error: Unexpectedly found nil while unwrapping an Optional value" [#1173](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1173)
 
 ## 5.4.3+5
 
 - Fixed possible java.lang.NullPointerException in `Runnable` of `InputAwareWebView.setInputConnectionTarget` method
-- Fixed "Android Crash in latest 5.4.3+4 - java.lang.NullPointerException: Attempt to invoke virtual method java.lang.String android.webkit.WebView.getUrl()" [#1168](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1168)
+- Fixed "Android Crash in latest 5.4.3+4 - java.lang.NullPointerException: Attempt to invoke virtual method java.lang.String android.webkit.WebView.getUrl()" [#1168](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1168)
 
 ## 5.4.3+4
 
@@ -17,15 +21,15 @@
 
 ## 5.4.3+3
 
-- Fixed "Android error: package org.jetbrains.annotations does not exist import org.jetbrains.annotations.NotNull;" [#1166](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1166)
+- Fixed "Android error: package org.jetbrains.annotations does not exist import org.jetbrains.annotations.NotNull;" [#1166](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1166)
 
 ## 5.4.3+2
 
-- Fixed "Latest version 5.4.3 crashes on Android" [#1159](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1159)
+- Fixed "Latest version 5.4.3 crashes on Android" [#1159](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1159)
 
 ## 5.4.3+1
 
-- Try to fix "Latest version 5.4.3 crashes on Android" [#1159](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1159)
+- Try to fix "Latest version 5.4.3 crashes on Android" [#1159](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1159)
 
 ## 5.4.3
 
@@ -33,7 +37,7 @@
 
 ## 5.4.2+1
 
-- Try to fix "Latest version 5.4.2 crashes on Android - HeadlessInAppWebView.dispose" [#1155](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1155)
+- Try to fix "Latest version 5.4.2 crashes on Android - HeadlessInAppWebView.dispose" [#1155](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1155)
 
 ## 5.4.2
 
@@ -41,7 +45,7 @@
 
 ## 5.4.1+2
 
-- Fixed "Android ServiceWorkerControllerCompat.setServiceWorkerClient(null) makes Webivew Plugin Crashes" [#1151](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1151)
+- Fixed "Android ServiceWorkerControllerCompat.setServiceWorkerClient(null) makes Webivew Plugin Crashes" [#1151](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1151)
 
 ## 5.4.1+1
 
@@ -62,7 +66,7 @@
 
 ## 5.4.0+1
 
-- Merged "[Android] Explicitly export for the receiver defined in AndroidManifest" [#1147](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1147) (thanks to [AlexV525](https://github.com/AlexV525))
+- Merged "[Android] Explicitly export for the receiver defined in AndroidManifest" [#1147](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1147) (thanks to [AlexV525](https://github.com/AlexV525))
 
 ## 5.4.0
 
@@ -75,39 +79,39 @@
 - Added support for Android TWA (Trusted Web Activity)
 - Fixed missing `onZoomScaleChanged` call for `InAppBrowser` class
 - Fixed `requestImageRef` method always `null` on iOS
-- Fixed "applicationNameForUserAgent is not work in ios" [#525](https://github.com/pichillilorenzo/flutter_inappwebview/issues/525)
-- Fixed "Crash when try select file from webview input on Android" [#867](https://github.com/pichillilorenzo/flutter_inappwebview/issues/867)
-- Fixed "NavigationAction.request should use toMap method" [#878](https://github.com/pichillilorenzo/flutter_inappwebview/issues/878)
-- Fixed "Missing body field in URLRequest toMap method" [#990](https://github.com/pichillilorenzo/flutter_inappwebview/issues/990)
-- Fixed "iOS : createWindowAction.request.body in onCreateWindow() is NULL" [#994](https://github.com/pichillilorenzo/flutter_inappwebview/issues/994)
-- Fixed "Crash at HeadlessInAppWebView dispose" [#881](https://github.com/pichillilorenzo/flutter_inappwebview/issues/881)
-- Fixed "Crash happens when HeadlessInAppWebView's dispose function is called in iOS" [#972](https://github.com/pichillilorenzo/flutter_inappwebview/issues/972)
-- Fixed "In android, when click a href with img returns img src on onCreateWindow" [#951](https://github.com/pichillilorenzo/flutter_inappwebview/issues/951)
-- Fixed "crash at com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebView$11.run (InAppWebView.java:1307)" [#1040](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1040)
-- Fixed "Unexpected behavior when using a null initialUrlRequest" [#1063](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1063)
-- Fixed "Local storage & cookie didn't persist when sharedCookie and cache both enabled" [#1092](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1092)
-- Fixed "ios zoomBy crash: Foundation/NSNumber.swift:467: Fatal error: Unable to bridge NSNumber to Float" [#873](https://github.com/pichillilorenzo/flutter_inappwebview/issues/873)
-- Fixed "In App Browser Crashing in Android - Action Bar is null" [#1137](https://github.com/pichillilorenzo/flutter_inappwebview/issues/1137)
-- Fixed "Cannot load Javascript on some Android devices - Uncaught TypeError: Cannot read property 'appendChild' of null" [#888](https://github.com/pichillilorenzo/flutter_inappwebview/issues/888)
-- Merged "Update Options.swift" [#889](https://github.com/pichillilorenzo/flutter_inappwebview/pull/889) (thanks to [cloudygeek](https://github.com/cloudygeek))
-- Merged "fix: Applicatio nNameForUserAgent is not working in iOS" [#1095](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1095) (thanks to [sunalwaysknows](https://github.com/sunalwaysknows))
-- Merged "Make sure we open a new instance of a custom chrome chrome tab" [#812](https://github.com/pichillilorenzo/flutter_inappwebview/pull/812) (thanks to [savy-91](https://github.com/savy-91))
-- Merged "fix bug when in String[] array come null" [#868](https://github.com/pichillilorenzo/flutter_inappwebview/pull/868) (thanks to [Ser1ous](https://github.com/Ser1ous))
-- Merged "fix: use in NavigationAction request toMap method" [#879](https://github.com/pichillilorenzo/flutter_inappwebview/pull/879) (thanks to [chreck](https://github.com/chreck))
-- Merged "switch android mockserver dependency with okhttp" [#946](https://github.com/pichillilorenzo/flutter_inappwebview/pull/946) (thanks to [randysecrist](https://github.com/randysecrist))
-- Merged "Adds missing body to URLRequest mapping." [#991](https://github.com/pichillilorenzo/flutter_inappwebview/pull/991) (thanks to [Miiha](https://github.com/Miiha))
-- Merged "fix. Crash happens when HeadlessInAppWebView's dispose function is called in iOS" [#1017](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1017) (thanks to [hoanglm4](https://github.com/hoanglm4))
-- Merged "Fixes URL returned when taping image with href in onCreateWindow [Android]" [#1042](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1042) (thanks to [Manuito83](https://github.com/Manuito83))
-- Merged "Fix Android Sometimes crash after close webpage and return to platform code." [#1050](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1050) (thanks to [rsydor](https://github.com/rsydor))
-- Merged "Add application/wasm MimeType with InAppLocalhostServer" [#1054](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1054) (thanks to [foxstream528](https://github.com/foxstream528))
-- Merged "Fixed the unexpected behavior of InAppWebView and HeadlessInAppWebView when initialUrlRequest was set as null." [#1064](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1064) (thanks to [RodXander](https://github.com/RodXander))
-- Merged "updated com.android.tools.build:gradle" [#1066](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1066) (thanks to [chownation](https://github.com/chownation))
-- Merged "WIP - expose content-disposition and content-length from android" [#1088](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1088) (thanks to [ashank96](https://github.com/ashank96))
-- Merged "Fix ios persistance when using sharedCookie" [#1093](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1093) (thanks to [EA-YOUHOU](https://github.com/EA-YOUHOU))
-- Merged "Fixes zoomBy with floats (iOS)" [#1109](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1109) (thanks to [Manuito83](https://github.com/Manuito83))
-- Merged "Build on and support Android 12 SDK 31" [#1111](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1111) (thanks to [carloserazo47](https://github.com/carloserazo47))
-- Merged "Fix takeScreenshot Crash on iOS" [#1123](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1123) (thanks to [a00012025](https://github.com/a00012025))
-- Merged "Feature. Possibility to disable iOS above keyboard inputAccessoryView" [#1124](https://github.com/pichillilorenzo/flutter_inappwebview/pull/1124) (thanks to [cutzmf](https://github.com/cutzmf))
+- Fixed "applicationNameForUserAgent is not work in ios" [#525](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/525)
+- Fixed "Crash when try select file from webview input on Android" [#867](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/867)
+- Fixed "NavigationAction.request should use toMap method" [#878](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/878)
+- Fixed "Missing body field in URLRequest toMap method" [#990](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/990)
+- Fixed "iOS : createWindowAction.request.body in onCreateWindow() is NULL" [#994](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/994)
+- Fixed "Crash at HeadlessInAppWebView dispose" [#881](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/881)
+- Fixed "Crash happens when HeadlessInAppWebView's dispose function is called in iOS" [#972](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/972)
+- Fixed "In android, when click a href with img returns img src on onCreateWindow" [#951](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/951)
+- Fixed "crash at com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebView$11.run (InAppWebView.java:1307)" [#1040](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1040)
+- Fixed "Unexpected behavior when using a null initialUrlRequest" [#1063](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1063)
+- Fixed "Local storage & cookie didn't persist when sharedCookie and cache both enabled" [#1092](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1092)
+- Fixed "ios zoomBy crash: Foundation/NSNumber.swift:467: Fatal error: Unable to bridge NSNumber to Float" [#873](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/873)
+- Fixed "In App Browser Crashing in Android - Action Bar is null" [#1137](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/1137)
+- Fixed "Cannot load Javascript on some Android devices - Uncaught TypeError: Cannot read property 'appendChild' of null" [#888](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/888)
+- Merged "Update Options.swift" [#889](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/889) (thanks to [cloudygeek](https://github.com/cloudygeek))
+- Merged "fix: Applicatio nNameForUserAgent is not working in iOS" [#1095](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1095) (thanks to [sunalwaysknows](https://github.com/sunalwaysknows))
+- Merged "Make sure we open a new instance of a custom chrome chrome tab" [#812](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/812) (thanks to [savy-91](https://github.com/savy-91))
+- Merged "fix bug when in String[] array come null" [#868](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/868) (thanks to [Ser1ous](https://github.com/Ser1ous))
+- Merged "fix: use in NavigationAction request toMap method" [#879](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/879) (thanks to [chreck](https://github.com/chreck))
+- Merged "switch android mockserver dependency with okhttp" [#946](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/946) (thanks to [randysecrist](https://github.com/randysecrist))
+- Merged "Adds missing body to URLRequest mapping." [#991](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/991) (thanks to [Miiha](https://github.com/Miiha))
+- Merged "fix. Crash happens when HeadlessInAppWebView's dispose function is called in iOS" [#1017](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1017) (thanks to [hoanglm4](https://github.com/hoanglm4))
+- Merged "Fixes URL returned when taping image with href in onCreateWindow [Android]" [#1042](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1042) (thanks to [Manuito83](https://github.com/Manuito83))
+- Merged "Fix Android Sometimes crash after close webpage and return to platform code." [#1050](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1050) (thanks to [rsydor](https://github.com/rsydor))
+- Merged "Add application/wasm MimeType with InAppLocalhostServer" [#1054](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1054) (thanks to [foxstream528](https://github.com/foxstream528))
+- Merged "Fixed the unexpected behavior of InAppWebView and HeadlessInAppWebView when initialUrlRequest was set as null." [#1064](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1064) (thanks to [RodXander](https://github.com/RodXander))
+- Merged "updated com.android.tools.build:gradle" [#1066](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1066) (thanks to [chownation](https://github.com/chownation))
+- Merged "WIP - expose content-disposition and content-length from android" [#1088](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1088) (thanks to [ashank96](https://github.com/ashank96))
+- Merged "Fix ios persistance when using sharedCookie" [#1093](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1093) (thanks to [EA-YOUHOU](https://github.com/EA-YOUHOU))
+- Merged "Fixes zoomBy with floats (iOS)" [#1109](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1109) (thanks to [Manuito83](https://github.com/Manuito83))
+- Merged "Build on and support Android 12 SDK 31" [#1111](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1111) (thanks to [carloserazo47](https://github.com/carloserazo47))
+- Merged "Fix takeScreenshot Crash on iOS" [#1123](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1123) (thanks to [a00012025](https://github.com/a00012025))
+- Merged "Feature. Possibility to disable iOS above keyboard inputAccessoryView" [#1124](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/1124) (thanks to [cutzmf](https://github.com/cutzmf))
 
 ## 5.3.2
 
@@ -123,12 +127,12 @@
 
 - Added support of `allowingReadAccessTo` iOS-specific WebView option for the WebView `initialData` parameter
 - Added `iosAllowingReadAccessTo` iOS-specific parameter to the `loadData` WebView method
-- Fixed "iOS webview showing blank page in specific URL" [#776](https://github.com/pichillilorenzo/flutter_inappwebview/issues/776)
-- Fixed "unable to access ApplicationDocumentsDirectory in real Ios devices" [#748](https://github.com/pichillilorenzo/flutter_inappwebview/issues/748)
+- Fixed "iOS webview showing blank page in specific URL" [#776](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/776)
+- Fixed "unable to access ApplicationDocumentsDirectory in real Ios devices" [#748](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/748)
 
 ## 5.3.0+1
 
-- Fixed "Android - Pull to refresh triggered when scrolling container inside a website" [#765](https://github.com/pichillilorenzo/flutter_inappwebview/issues/765)
+- Fixed "Android - Pull to refresh triggered when scrolling container inside a website" [#765](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/765)
 - Fixed "InAppWebViewController.getHitTestResult" wrong type mapping
 
 ## 5.3.0
@@ -139,14 +143,14 @@
 - `getScale` WebView method is now deprecated. Use the new `getZoomScale` WebView method
 - Removed `final` keyword for all `HeadlessInAppWebView` events
 - Fixed wrong usage of Android WebView scale property
-- Fixed "java.lang.NullPointerException: com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebViewRenderProcessClient$1.success(InAppWebViewRenderProcessClient.java:37)" [#757](https://github.com/pichillilorenzo/flutter_inappwebview/issues/757)
-- Fixed "In a multi-activity app, the plugin doesn't reattach to the first activity" [#732](https://github.com/pichillilorenzo/flutter_inappwebview/issues/732)
-- Fixed "ChromeSafariBrowser isn't calling its events, and not keeping track of isOpen properly" [#759](https://github.com/pichillilorenzo/flutter_inappwebview/issues/759)
+- Fixed "java.lang.NullPointerException: com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebViewRenderProcessClient$1.success(InAppWebViewRenderProcessClient.java:37)" [#757](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/757)
+- Fixed "In a multi-activity app, the plugin doesn't reattach to the first activity" [#732](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/732)
+- Fixed "ChromeSafariBrowser isn't calling its events, and not keeping track of isOpen properly" [#759](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/759)
 - Fixed Android ChromeSafariBrowser menu item callback not called because of PendingIntents extra were cached
 
 ## 5.2.1+1
 
-- Fixed iOS "Unexpectedly found nil while unwrapping an Optional value: file flutter_inappwebview/WKUserContentController.swift, line 36" error when `applePayAPIEnabled` iOS-specific WebView option is enabled
+- Fixed iOS "Unexpectedly found nil while unwrapping an Optional value: file flutter_inappwebview_quill/WKUserContentController.swift, line 36" error when `applePayAPIEnabled` iOS-specific WebView option is enabled
 
 ## 5.2.1
 
@@ -155,8 +159,8 @@
 - Added `allowGoBackWithBackButton` and `shouldCloseOnBackButtonPressed` Android-specific InAppBrowser options
 - Fixed iOS `WebMessageListener` javascript implementation not calling event listeners when `onmessage` is set
 - Fixed `onCreateContextMenu` event on Android where `hitTestResult` has always `null` values
-- Fixed "java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.SearchView.setQuery(java.lang.CharSequence, boolean)' on a null object reference" [#742](https://github.com/pichillilorenzo/flutter_inappwebview/issues/742)
-- Fixed Android js error in some very rare case where `window.flutter_inappwebview` is `undefined` when loading plugin scripts
+- Fixed "java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.SearchView.setQuery(java.lang.CharSequence, boolean)' on a null object reference" [#742](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/742)
+- Fixed Android js error in some very rare case where `window.flutter_inappwebview_quill` is `undefined` when loading plugin scripts
 
 ## 5.2.0
 
@@ -167,14 +171,14 @@
 - `AndroidInAppWebViewController.getCurrentWebViewPackage` is available now starting from Android API 21+
 - Updated Android Gradle distributionUrl version to `5.6.4`
 - Updated Android `androidx.webkit:webkit` to `1.4.0`, `androidx.browser:browser` to `1.3.0`, `androidx.appcompat:appcompat` to `1.2.0`
-- Attempt to fix "InAppBrowserActivity.onCreate NullPointerException - Attempt to invoke virtual method 'java.lang.String android.os.Bundle.getString(java.lang.String)' on a null object reference" [#665](https://github.com/pichillilorenzo/flutter_inappwebview/issues/665)
-- Fixed "[iOS] Application crashes when processing onCreateWindow" [#579](https://github.com/pichillilorenzo/flutter_inappwebview/issues/579)
+- Attempt to fix "InAppBrowserActivity.onCreate NullPointerException - Attempt to invoke virtual method 'java.lang.String android.os.Bundle.getString(java.lang.String)' on a null object reference" [#665](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/665)
+- Fixed "[iOS] Application crashes when processing onCreateWindow" [#579](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/579)
 - Fixed wrong mapping of `NavigationAction` class on Android for `androidHasGesture` and `androidIsRedirect` properties
-- Fixed "Pull to refresh creating problem in some webpages on Android" [#719](https://github.com/pichillilorenzo/flutter_inappwebview/issues/719)
+- Fixed "Pull to refresh creating problem in some webpages on Android" [#719](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/719)
 - Fixed iOS sometimes `scrollView.contentSize` doesn't fit all the `frame.size` available
 - Fixed ajax and fetch interceptor when the data/body sent is not a string
-- Fixed "InAppLocalhostServer - Error: type 'List<dynamic>' is not a subtype of type 'List<int>' in type cast" [#724](https://github.com/pichillilorenzo/flutter_inappwebview/issues/724)
-- Merged "fix proguard" [#737](https://github.com/pichillilorenzo/flutter_inappwebview/pull/737) (thanks to [myroid](https://github.com/myroid))
+- Fixed "InAppLocalhostServer - Error: type 'List<dynamic>' is not a subtype of type 'List<int>' in type cast" [#724](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/724)
+- Merged "fix proguard" [#737](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/737) (thanks to [myroid](https://github.com/myroid))
 
 ### BREAKING CHANGES
 
@@ -182,11 +186,11 @@
 
 ## 5.1.0+4
 
-- Fixed "IOS scrolling crash the application" [#707](https://github.com/pichillilorenzo/flutter_inappwebview/issues/707)
+- Fixed "IOS scrolling crash the application" [#707](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/707)
 
 ## 5.1.0+3
 
-- Fixed "Unsupported operation: Platform._operatingSystem" when compiling for Web again [#507](https://github.com/pichillilorenzo/flutter_inappwebview/issues/507)
+- Fixed "Unsupported operation: Platform._operatingSystem" when compiling for Web again [#507](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/507)
 
 ## 5.1.0+2
 
@@ -198,8 +202,8 @@
 
 ## 5.1.0
 
-- Added support for pull-to-refresh feature [#395](https://github.com/pichillilorenzo/flutter_inappwebview/issues/395)
-- Fixed issue not rendering WebView content when scrolling on iOS [#703](https://github.com/pichillilorenzo/flutter_inappwebview/issues/703)
+- Added support for pull-to-refresh feature [#395](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/395)
+- Fixed issue not rendering WebView content when scrolling on iOS [#703](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/703)
 - Fixed `InAppBrowser.openData` method
 - `InAppBrowser.initialUserScripts`, `InAppBrowser.id`, `HeadlessInAppWebView.id` properties are `final` now
 
@@ -213,7 +217,7 @@
 
 ## 5.0.5+1
 
-- Fixed "No bounce in inappwebview iOS" [#696](https://github.com/pichillilorenzo/flutter_inappwebview/issues/696)
+- Fixed "No bounce in inappwebview iOS" [#696](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/696)
 
 ## 5.0.5
 
@@ -241,7 +245,7 @@
 ## 5.0.0-nullsafety.0
 
 - Added support for Dart null-safety feature
-- Added Android Hybrid Composition support "Use PlatformViewLink widget for Android WebView" [#462](https://github.com/pichillilorenzo/flutter_inappwebview/pull/462) (thanks to [plateaukao](https://github.com/plateaukao) and [tneotia](https://github.com/tneotia))
+- Added Android Hybrid Composition support "Use PlatformViewLink widget for Android WebView" [#462](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/462) (thanks to [plateaukao](https://github.com/plateaukao) and [tneotia](https://github.com/tneotia))
 - Added `allowUniversalAccessFromFileURLs` and `allowFileAccessFromFileURLs` WebView options also for iOS (also thanks to [liranhao](https://github.com/liranhao))
 - Added limited cookies support on iOS below 11.0 using JavaScript
 - Added `IOSCookieManager` class and `CookieManager.instance().ios.getAllCookies` iOS-specific method
@@ -260,30 +264,30 @@
 - Added new iOS-specific attributes to `ShouldOverrideUrlLoadingRequest` and `CreateWindowRequest` classes
 - Added `toolbarTopTranslucent`, `toolbarTopTintColor`, `toolbarBottomTintColor`, `toolbarTopBarTintColor` ios-specific InAppBrowser options
 - Updated integration tests
-- Merged "Upgraded appcompat to 1.2.0-rc-02" [#465](https://github.com/pichillilorenzo/flutter_inappwebview/pull/465) (thanks to [andreidiaconu](https://github.com/andreidiaconu))
-- Merged "Added missing field 'headers' which returned by WebResourceResponse.toMap()" [#490](https://github.com/pichillilorenzo/flutter_inappwebview/pull/490) (thanks to [Doflatango](https://github.com/Doflatango))
-- Merged "Fix: added iOS fallback module import" [#466](https://github.com/pichillilorenzo/flutter_inappwebview/pull/466) (thanks to [Eddayy](https://github.com/Eddayy))
-- Merged "Fix NullPointerException after taking a photo by a camera app on Android" [#492](https://github.com/pichillilorenzo/flutter_inappwebview/pull/492) (thanks to [AAkira](https://github.com/AAkira))
-- Merged "iOS CookieManager.getCookies - Check that URL has suffix of cookie do…" [#658](https://github.com/pichillilorenzo/flutter_inappwebview/pull/658) (thanks to [arneke](https://github.com/arneke))
-- Merged "Add NTLM Auth" [#634](https://github.com/pichillilorenzo/flutter_inappwebview/pull/634) (thanks to [albatrosify](https://github.com/albatrosify))
-- Merged "iOS ChromeSafariBrowserManager - Fixing unnecessary casting of rootViewController to FlutterViewController" [#567](https://github.com/pichillilorenzo/flutter_inappwebview/pull/567) (thanks to [gunantosteven](https://github.com/gunantosteven))
-- Merged "Fix _channel.invokeMethod name for injectCSSFileFromUrl method" [#645](https://github.com/pichillilorenzo/flutter_inappwebview/pull/645) (thanks to [omralcrt](https://github.com/omralcrt))
-- Merged "Add android media intents on wildcard input accept" [#620](https://github.com/pichillilorenzo/flutter_inappwebview/pull/620) (thanks to [cbodin](https://github.com/cbodin))
-- Merged "Add ChromeSafariBrowser support for Android 11" [#538](https://github.com/pichillilorenzo/flutter_inappwebview/pull/538) (thanks to [DRSchlaubi](https://github.com/DRSchlaubi))
-- Merged "fix(iOS): missing implementation of method zoomBy" [#670](https://github.com/pichillilorenzo/flutter_inappwebview/pull/670) (thanks to [pcqpcq](https://github.com/pcqpcq))
-- Merged "[mod] Fix all issues relate to long click in Android version 7.0 (#657, #527)" [#671](https://github.com/pichillilorenzo/flutter_inappwebview/pull/671) (thanks to [MrNinja](https://github.com/MrNinja))
-- Merged "Fix ViewGroup.removeView NullPointerException (#450)" [#683](https://github.com/pichillilorenzo/flutter_inappwebview/pull/683) (thanks to [toda-bps](https://github.com/toda-bps))
+- Merged "Upgraded appcompat to 1.2.0-rc-02" [#465](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/465) (thanks to [andreidiaconu](https://github.com/andreidiaconu))
+- Merged "Added missing field 'headers' which returned by WebResourceResponse.toMap()" [#490](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/490) (thanks to [Doflatango](https://github.com/Doflatango))
+- Merged "Fix: added iOS fallback module import" [#466](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/466) (thanks to [Eddayy](https://github.com/Eddayy))
+- Merged "Fix NullPointerException after taking a photo by a camera app on Android" [#492](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/492) (thanks to [AAkira](https://github.com/AAkira))
+- Merged "iOS CookieManager.getCookies - Check that URL has suffix of cookie do…" [#658](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/658) (thanks to [arneke](https://github.com/arneke))
+- Merged "Add NTLM Auth" [#634](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/634) (thanks to [albatrosify](https://github.com/albatrosify))
+- Merged "iOS ChromeSafariBrowserManager - Fixing unnecessary casting of rootViewController to FlutterViewController" [#567](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/567) (thanks to [gunantosteven](https://github.com/gunantosteven))
+- Merged "Fix _channel.invokeMethod name for injectCSSFileFromUrl method" [#645](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/645) (thanks to [omralcrt](https://github.com/omralcrt))
+- Merged "Add android media intents on wildcard input accept" [#620](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/620) (thanks to [cbodin](https://github.com/cbodin))
+- Merged "Add ChromeSafariBrowser support for Android 11" [#538](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/538) (thanks to [DRSchlaubi](https://github.com/DRSchlaubi))
+- Merged "fix(iOS): missing implementation of method zoomBy" [#670](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/670) (thanks to [pcqpcq](https://github.com/pcqpcq))
+- Merged "[mod] Fix all issues relate to long click in Android version 7.0 (#657, #527)" [#671](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/671) (thanks to [MrNinja](https://github.com/MrNinja))
+- Merged "Fix ViewGroup.removeView NullPointerException (#450)" [#683](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/683) (thanks to [toda-bps](https://github.com/toda-bps))
 - Fixed missing properties initialization when using InAppWebViewController.fromInAppBrowser
-- Fixed "Issue in Flutter web: 'Unsupported operation: Platform._operatingSystem'" [#507](https://github.com/pichillilorenzo/flutter_inappwebview/issues/507)
-- Fixed "window.flutter_inappwebview.callHandler is not a function" [#218](https://github.com/pichillilorenzo/flutter_inappwebview/issues/218)
-- Fixed "Android ContentBlocker - java.lang.NullPointerException ContentBlockerTrigger resource type" [#506](https://github.com/pichillilorenzo/flutter_inappwebview/issues/506)
-- Fixed "Android CookieManager throws error caused by websites that are sending back illegal/invalid cookies." [#476](https://github.com/pichillilorenzo/flutter_inappwebview/issues/476)
+- Fixed "Issue in Flutter web: 'Unsupported operation: Platform._operatingSystem'" [#507](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/507)
+- Fixed "window.flutter_inappwebview_quill.callHandler is not a function" [#218](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/218)
+- Fixed "Android ContentBlocker - java.lang.NullPointerException ContentBlockerTrigger resource type" [#506](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/506)
+- Fixed "Android CookieManager throws error caused by websites that are sending back illegal/invalid cookies." [#476](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/476)
 - Fixed missing `clearHistory` webview method implementation on Android
 - Fixed iOS crash when using CookieManager getCookies for an URL and the host URL is `null`
-- Fixed "IOS does not support allowUniversalAccessFromFileURLs" [#654](https://github.com/pichillilorenzo/flutter_inappwebview/issues/654)
-- Fixed "Failed to load WebView provider: No WebView installed" [#642](https://github.com/pichillilorenzo/flutter_inappwebview/issues/642)
-- Fixed "java.net.MalformedURLException: unknown protocol: wss - Error using library sipml5 in flutter_inappwebview" [#614](https://github.com/pichillilorenzo/flutter_inappwebview/issues/614)
-- Fixed "Android 10 clipboard not working properly" [#678](https://github.com/pichillilorenzo/flutter_inappwebview/issues/678) (thanks to [armadastate](https://github.com/armadastate))
+- Fixed "IOS does not support allowUniversalAccessFromFileURLs" [#654](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/654)
+- Fixed "Failed to load WebView provider: No WebView installed" [#642](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/642)
+- Fixed "java.net.MalformedURLException: unknown protocol: wss - Error using library sipml5 in flutter_inappwebview_quill" [#614](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/614)
+- Fixed "Android 10 clipboard not working properly" [#678](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/678) (thanks to [armadastate](https://github.com/armadastate))
 
 ### BREAKING CHANGES
 
@@ -332,7 +336,7 @@
 
 - Reverted calling `handler.post` on Android when a WebView is created
 - Fixed iOS extra bottom padding when opening the keyboard
-- Fixed "Build for web not working – The integer literal 9223372036854775807 can't be represented exactly in JavaScript" [#429](https://github.com/pichillilorenzo/flutter_inappwebview/issues/429)
+- Fixed "Build for web not working – The integer literal 9223372036854775807 can't be represented exactly in JavaScript" [#429](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/429)
 - Fixed iOS userContentController didReceive WKScriptMessage event when using a WebView created with a `windowId`
 
 ## 4.0.0
@@ -342,7 +346,7 @@
 - Added `androidOnRequestFocus`, `androidOnReceivedIcon`, `androidOnReceivedTouchIconUrl`, `androidOnJsBeforeUnload`, `androidOnReceivedLoginRequest` Android-specific webview events
 - Added `disableDefaultErrorPage` Android-specific webview option
 - Added `isAvailable` ChromeSafariBrowser static method
-- Fixed "SFSafariViewController doesn't open like a native iOS modal" [#403](https://github.com/pichillilorenzo/flutter_inappwebview/issues/403)
+- Fixed "SFSafariViewController doesn't open like a native iOS modal" [#403](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/403)
 
 ### BREAKING CHANGES
 
@@ -381,7 +385,7 @@
 - Fixed `getFavicons` method
 - Fixed `HttpAuthCredentialDatabase.removeHttpAuthCredential` on Android
 - Fixed some cases where `takeScreenshot` was not working on Android
-- Fixed `After upgrade to Android embedding V2, still get Shared.activity is null / NullPointerException on android.content.Context.getResources()` [#390](https://github.com/pichillilorenzo/flutter_inappwebview/issues/390)
+- Fixed `After upgrade to Android embedding V2, still get Shared.activity is null / NullPointerException on android.content.Context.getResources()` [#390](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/390)
 
 ### BREAKING CHANGES
 
@@ -396,8 +400,8 @@
 ## 3.3.0+3
 
 - Updated Android build.gradle version and some androidx properties
-- Fixed `Multiple sessions` [#371](https://github.com/pichillilorenzo/flutter_inappwebview/issues/371)
-- Fixed `incognito mode is broken swift` [#320](https://github.com/pichillilorenzo/flutter_inappwebview/issues/320)
+- Fixed `Multiple sessions` [#371](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/371)
+- Fixed `incognito mode is broken swift` [#320](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/320)
 
 ## 3.3.0
 
@@ -406,8 +410,8 @@
 - Calling `onCreateContextMenu` event on iOS also when the context menu is disabled in order to have the same effect as Android
 - Added `options` attribute to `ContextMenu` class and created `ContextMenuOptions` class
 - Added Android keyboard workaround to hide the keyboard when clicking other HTML elements, losing the focus on the previous input
-- Added `onEnterFullscreen`, `onExitFullscreen` webview events [#275](https://github.com/pichillilorenzo/flutter_inappwebview/issues/275)
-- Added Android support to use camera on HTML inputs that requires it, such as `<input type="file" accept="image/*" capture>` [#353](https://github.com/pichillilorenzo/flutter_inappwebview/issues/353)
+- Added `onEnterFullscreen`, `onExitFullscreen` webview events [#275](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/275)
+- Added Android support to use camera on HTML inputs that requires it, such as `<input type="file" accept="image/*" capture>` [#353](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/353)
 - Added `overScrollMode`, `networkAvailable`, `scrollBarStyle`, `verticalScrollbarPosition`, `scrollBarDefaultDelayBeforeFade`, `scrollbarFadingEnabled`, `scrollBarFadeDuration`, `rendererPriorityPolicy`, `useShouldInterceptRequest`, `useOnRenderProcessGone` webview options on Android
 - Added `pageDown`, `pageUp`, `saveWebArchive`, `zoomIn`, `zoomOut`, `clearHistory` webview methods on Android
 - Added `getCurrentWebViewPackage` static webview method on Android
@@ -415,11 +419,11 @@
 - Added `onPageCommitVisible` webview event
 - Added `androidShouldInterceptRequest`, `androidOnRenderProcessUnresponsive`, `androidOnRenderProcessResponsive`, `androidOnRenderProcessGone`, `androidOnFormResubmission`, `androidOnScaleChanged` Android events
 - Added `toString()` method to various classes in order to have a better output instead of simply `Instance of ...`
-- Fixed `Print preview is not working? java.lang.IllegalStateException: Can print only from an activity` [#128](https://github.com/pichillilorenzo/flutter_inappwebview/issues/128)
+- Fixed `Print preview is not working? java.lang.IllegalStateException: Can print only from an activity` [#128](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/128)
 - Fixed `onJsAlert`, `onJsConfirm`, `onJsPrompt` for `InAppBrowser` on Android
 - Fixed `onActivityResult` for `InAppBrowser` on Android
-- Fixed `InAppBrowser.openWithSystemBrowser crash on iOS` [#358](https://github.com/pichillilorenzo/flutter_inappwebview/issues/358)
-- Fixed `Attempt to invoke virtual method 'java.util.Set java.util.HashMap.entrySet()' on a null object reference` [#367](https://github.com/pichillilorenzo/flutter_inappwebview/issues/367)
+- Fixed `InAppBrowser.openWithSystemBrowser crash on iOS` [#358](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/358)
+- Fixed `Attempt to invoke virtual method 'java.util.Set java.util.HashMap.entrySet()' on a null object reference` [#367](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/367)
 - Fixed missing `allowsAirPlayForMediaPlayback` iOS webview options implementation
 
 ### BREAKING CHANGES
@@ -430,14 +434,14 @@
 
 ## 3.2.0
 
-- Added `ContextMenu` and `ContextMenuItem` classes [#235](https://github.com/pichillilorenzo/flutter_inappwebview/issues/235)
+- Added `ContextMenu` and `ContextMenuItem` classes [#235](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/235)
 - Added `onCreateContextMenu`, `onHideContextMenu`, `onContextMenuActionItemClicked` context menu events
 - Added `contextMenu` to WebView
 - Added `disableContextMenu` WebView option
 - Added `getSelectedText`, `getHitTestResult` methods to WebView Controller
-- Fixed `Confirmation dialog (onbeforeunload) displayed after popped from webview page` [#337](https://github.com/pichillilorenzo/flutter_inappwebview/issues/337)
+- Fixed `Confirmation dialog (onbeforeunload) displayed after popped from webview page` [#337](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/337)
 - Fixed `CookieManager.setCookie` `expiresDate` option
-- Fixed `Scrolling not smooth on iOS` [#341](https://github.com/pichillilorenzo/flutter_inappwebview/issues/341)
+- Fixed `Scrolling not smooth on iOS` [#341](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/341)
 
 ### BREAKING CHANGES
 
@@ -450,7 +454,7 @@
 - Added `close`, `addMenuItem`, `addMenuItems` methods to `ChromeSafariBrowser`
 - Added `ChromeSafariBrowserMenuItem` class in order to create custom menu item for `ChromeSafariBrowser`
 - Fixed `InAppWebView.channel` null when used by `InAppBrowserActivity` on android
-- Fixed iOS presentationStyle affecting only dismiss animation [#305](https://github.com/pichillilorenzo/flutter_inappwebview/issues/305)
+- Fixed iOS presentationStyle affecting only dismiss animation [#305](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/305)
 
 ### BREAKING CHANGES
 
@@ -458,7 +462,7 @@
 
 ## 3.0.0
 
-- Added `Promise` javascript [polyfill](https://github.com/tildeio/rsvp.js) for webviews that doesn't support it for `window.flutter_inappwebview.callHandler`
+- Added `Promise` javascript [polyfill](https://github.com/tildeio/rsvp.js) for webviews that doesn't support it for `window.flutter_inappwebview_quill.callHandler`
 - Added `getDefaultUserAgent` static method to `InAppWebViewController`
 - Added `onUpdateVisitedHistory`, `onPrint`, `onLongPressHitTestResult` event
 - Added `androidOnGeolocationPermissionsHidePrompt` event for Android webview
@@ -470,22 +474,22 @@
 - Added `reloadFromOrigin`, `hasOnlySecureContent` webview methods for iOS
 - Added `automaticallyAdjustsScrollIndicatorInsets`, `accessibilityIgnoresInvertColors`, `decelerationRate`, `alwaysBounceVertical`, `alwaysBounceHorizontal`, `scrollsToTop`, `isPagingEnabled`, `maximumZoomScale`, `minimumZoomScale` webview options for iOS
 - Added `WebStorageManager` class which manages the web storage used by WebView instances
-- Added `packageName` [#229](https://github.com/pichillilorenzo/flutter_inappwebview/issues/229) and `keepAliveEnabled` ChromeCustomTab options for Android
+- Added `packageName` [#229](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/229) and `keepAliveEnabled` ChromeCustomTab options for Android
 - Updated for Flutter 1.12 new Java Embedding API (Android)
 - Updated `clearCache` for Android
 - Updated default value for `domStorageEnabled` and `databaseEnabled` options to `true` for Android
-- Merged "Fixes null error when calling getOptions for InAppBrowser class" [#214](https://github.com/pichillilorenzo/flutter_inappwebview/pull/214) (thanks to [panndoraBoo](https://github.com/panndoraBoo))
-- Merged "Fixes crash onConsoleMessage iOS forced unwrapping" [#228](https://github.com/pichillilorenzo/flutter_inappwebview/pull/228) (thanks to [tokonu](https://github.com/tokonu))
-- Merged "Fix HTTPCookie.secure" [#311](https://github.com/pichillilorenzo/flutter_inappwebview/pull/311) (thanks to [xtyxtyx](https://github.com/xtyxtyx))
-- Merged "Fix config options for Android release builds" [#295](https://github.com/pichillilorenzo/flutter_inappwebview/pull/295) (thanks to [wwwdata](https://github.com/wwwdata))
-- Merged "fix scrollbar on iOS always show if not disable scroll" [#256](https://github.com/pichillilorenzo/flutter_inappwebview/pull/256) (thanks to [phamnhuvu-dev](https://github.com/phamnhuvu-dev))
-- Merged "Fix crash on nil/invalid URL (iOS)" [#262](https://github.com/pichillilorenzo/flutter_inappwebview/pull/262) (thanks to [AlexVincent525](https://github.com/AlexVincent525))
-- Merged "Fix crash when `prompt` was called on Android Q." [#262](https://github.com/pichillilorenzo/flutter_inappwebview/pull/263) (thanks to [AlexVincent525](https://github.com/AlexVincent525))
+- Merged "Fixes null error when calling getOptions for InAppBrowser class" [#214](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/214) (thanks to [panndoraBoo](https://github.com/panndoraBoo))
+- Merged "Fixes crash onConsoleMessage iOS forced unwrapping" [#228](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/228) (thanks to [tokonu](https://github.com/tokonu))
+- Merged "Fix HTTPCookie.secure" [#311](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/311) (thanks to [xtyxtyx](https://github.com/xtyxtyx))
+- Merged "Fix config options for Android release builds" [#295](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/295) (thanks to [wwwdata](https://github.com/wwwdata))
+- Merged "fix scrollbar on iOS always show if not disable scroll" [#256](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/256) (thanks to [phamnhuvu-dev](https://github.com/phamnhuvu-dev))
+- Merged "Fix crash on nil/invalid URL (iOS)" [#262](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/262) (thanks to [AlexVincent525](https://github.com/AlexVincent525))
+- Merged "Fix crash when `prompt` was called on Android Q." [#262](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/263) (thanks to [AlexVincent525](https://github.com/AlexVincent525))
 - Fix for Android and iOS `InAppBrowser` for some controller methods not exposed.
-- Fixed "App Crashes after clicking on dropdown (Using inappwebview)" [#182](https://github.com/pichillilorenzo/flutter_inappwebview/issues/182)
-- Fixed "webview can not be released when in ios" [#225](https://github.com/pichillilorenzo/flutter_inappwebview/issues/225). Now the iOS WebView is released from memory when it is disposed from Flutter.
-- Fixed "Setting of presentationStyle not working on iOS" [#213](https://github.com/pichillilorenzo/flutter_inappwebview/issues/213)
-- Fixed "Android zoom issues" [#270](https://github.com/pichillilorenzo/flutter_inappwebview/issues/270)
+- Fixed "App Crashes after clicking on dropdown (Using inappwebview)" [#182](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/182)
+- Fixed "webview can not be released when in ios" [#225](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/225). Now the iOS WebView is released from memory when it is disposed from Flutter.
+- Fixed "Setting of presentationStyle not working on iOS" [#213](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/213)
+- Fixed "Android zoom issues" [#270](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/270)
 
 ### BREAKING CHANGES
 
@@ -514,8 +518,8 @@
 - Added `pause` and `resume` methods for Android.
 - Added `pauseTimers` and `resumeTimers` methods.
 - Added new `historyUrl` optional parameter for `loadData` and `openData` methods and `InAppWebViewInitialData` class. It is used only on Android.
-- Fix "problems with onReceivedHttpAuthRequest when initialData is used" [#201](https://github.com/pichillilorenzo/flutter_inappwebview/issues/201)
-- Fix "System ui (status bar and navigation bar) doesn't hide automatically" [#202](https://github.com/pichillilorenzo/flutter_inappwebview/issues/202)
+- Fix "problems with onReceivedHttpAuthRequest when initialData is used" [#201](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/201)
+- Fix "System ui (status bar and navigation bar) doesn't hide automatically" [#202](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/202)
 
 ## 2.0.1+1
 
@@ -527,17 +531,17 @@
 
 ## 2.0.0
 
-- Merged "Avoid null pointer exception after webview is disposed" [#116](https://github.com/pichillilorenzo/flutter_inappwebview/pull/116) (thanks to [robsonfingo](https://github.com/robsonfingo))
-- Merged "Remove async call in close" [#119](https://github.com/pichillilorenzo/flutter_inappwebview/pull/119) (thanks to [benfingo](https://github.com/benfingo))
-- Merged "Android takeScreenshot does not work properly." [#122](https://github.com/pichillilorenzo/flutter_inappwebview/pull/122) (thanks to [PauloMelo](https://github.com/PauloMelo))
-- Merged "Resolving gradle error." [#144](https://github.com/pichillilorenzo/flutter_inappwebview/pull/144) (thanks to [Klingens13](https://github.com/Klingens13))
-- Merged "Create issue and pull request templates" [#150](https://github.com/pichillilorenzo/flutter_inappwebview/pull/150) (thanks to [deandreamatias](https://github.com/deandreamatias))
-- Merged "Fix abstract method error && swift version error" [#155](https://github.com/pichillilorenzo/flutter_inappwebview/pull/155) (thanks to [AlexVincent525](https://github.com/AlexVincent525))
-- Merged "migrating to swift 5.0" [#162](https://github.com/pichillilorenzo/flutter_inappwebview/pull/162) (thanks to [fattiger00](https://github.com/fattiger00))
-- Merged "Update readme example" [#178](https://github.com/pichillilorenzo/flutter_inappwebview/pull/178) (thanks to [SebastienBtr](https://github.com/SebastienBtr))
-- Merged "handle choose file callback in android" [#183](https://github.com/pichillilorenzo/flutter_inappwebview/pull/183) (thanks to [crazecoder](https://github.com/crazecoder))
-- Merged "add initialScale in android" [#186](https://github.com/pichillilorenzo/flutter_inappwebview/pull/186) (thanks to [crazecoder](https://github.com/crazecoder))
-- Added `horizontalScrollBarEnabled` and `verticalScrollBarEnabled` options to enable/disable the corresponding scrollbar of the WebView [#165](https://github.com/pichillilorenzo/flutter_inappwebview/issues/165)
+- Merged "Avoid null pointer exception after webview is disposed" [#116](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/116) (thanks to [robsonfingo](https://github.com/robsonfingo))
+- Merged "Remove async call in close" [#119](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/119) (thanks to [benfingo](https://github.com/benfingo))
+- Merged "Android takeScreenshot does not work properly." [#122](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/122) (thanks to [PauloMelo](https://github.com/PauloMelo))
+- Merged "Resolving gradle error." [#144](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/144) (thanks to [Klingens13](https://github.com/Klingens13))
+- Merged "Create issue and pull request templates" [#150](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/150) (thanks to [deandreamatias](https://github.com/deandreamatias))
+- Merged "Fix abstract method error && swift version error" [#155](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/155) (thanks to [AlexVincent525](https://github.com/AlexVincent525))
+- Merged "migrating to swift 5.0" [#162](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/162) (thanks to [fattiger00](https://github.com/fattiger00))
+- Merged "Update readme example" [#178](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/178) (thanks to [SebastienBtr](https://github.com/SebastienBtr))
+- Merged "handle choose file callback in android" [#183](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/183) (thanks to [crazecoder](https://github.com/crazecoder))
+- Merged "add initialScale in android" [#186](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/186) (thanks to [crazecoder](https://github.com/crazecoder))
+- Added `horizontalScrollBarEnabled` and `verticalScrollBarEnabled` options to enable/disable the corresponding scrollbar of the WebView [#165](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/165)
 - Added `onDownloadStart` event and `useOnDownloadStart` option: event fires when the WebView recognizes and starts a downloadable file.
 - Added `onLoadResourceCustomScheme` event and `resourceCustomSchemes` option to set custom schemes that WebView must handle to load resources
 - Added `onTargetBlank` event and `useOnTargetBlank` option to manage links with `target="_blank"`
@@ -575,37 +579,37 @@
 
 ## 1.2.2
 
-- Merged "added a shared WKProcessPool for webview instances" [#198](https://github.com/pichillilorenzo/flutter_inappwebview/pull/198) (thanks to [robertcnst](https://github.com/robertcnst))
+- Merged "added a shared WKProcessPool for webview instances" [#198](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/198) (thanks to [robertcnst](https://github.com/robertcnst))
 - Fixed iOS setCookie.
 
 ## 1.2.1
 
-- Merged "Add new option to control the contentMode in Android platform" [#101](https://github.com/pichillilorenzo/flutter_inappwebview/pull/101) (thanks to [DreamBuddy](https://github.com/DreamBuddy))
-- Merged "Fix crash on xcode 10.2" [#107](https://github.com/pichillilorenzo/flutter_inappwebview/pull/107) (thanks to [robsonfingo](https://github.com/robsonfingo))
-- Merged "Remove headers_build_phase from example's Podfile" [#108](https://github.com/pichillilorenzo/flutter_inappwebview/pull/108) (thanks to [robsonfingo](https://github.com/robsonfingo))
-- Fixed "Make html5 video fullscreen" for Android [#43](https://github.com/pichillilorenzo/flutter_inappwebview/issues/43)
-- Fixed "AllowsInlineMediaPlayback not working" for iOS [#73](https://github.com/pichillilorenzo/flutter_inappwebview/issues/73)
+- Merged "Add new option to control the contentMode in Android platform" [#101](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/101) (thanks to [DreamBuddy](https://github.com/DreamBuddy))
+- Merged "Fix crash on xcode 10.2" [#107](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/107) (thanks to [robsonfingo](https://github.com/robsonfingo))
+- Merged "Remove headers_build_phase from example's Podfile" [#108](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/108) (thanks to [robsonfingo](https://github.com/robsonfingo))
+- Fixed "Make html5 video fullscreen" for Android [#43](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/43)
+- Fixed "AllowsInlineMediaPlayback not working" for iOS [#73](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/73)
 
 ## 1.2.0
 
-- Merged "Adds a transparentBackground option for iOS and Android" [#86](https://github.com/pichillilorenzo/flutter_inappwebview/pull/86) (thanks to [matthewlloyd](https://github.com/matthewlloyd))
-- Merged "The 'open' method requires an options dictionary" [#87](https://github.com/pichillilorenzo/flutter_inappwebview/pull/87) (thanks to [matthewlloyd](https://github.com/matthewlloyd))
-- Merged "iOS: Call setNeedsLayout() in scrollViewDidScroll()" [#88](https://github.com/pichillilorenzo/flutter_inappwebview/pull/88) (thanks to [matthewlloyd](https://github.com/matthewlloyd))
-- Fixed "java.lang.RuntimeException: Methods marked with @UiThread must be executed on the main thread." [#98](https://github.com/pichillilorenzo/flutter_inappwebview/issues/98) (thanks to [DreamBuddy](https://github.com/DreamBuddy))
-- Fixed "app force close/crash when enabling zoom and repeatedly changing orientation and zoomin zoomout" [#93](https://github.com/pichillilorenzo/flutter_inappwebview/issues/93)
+- Merged "Adds a transparentBackground option for iOS and Android" [#86](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/86) (thanks to [matthewlloyd](https://github.com/matthewlloyd))
+- Merged "The 'open' method requires an options dictionary" [#87](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/87) (thanks to [matthewlloyd](https://github.com/matthewlloyd))
+- Merged "iOS: Call setNeedsLayout() in scrollViewDidScroll()" [#88](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/88) (thanks to [matthewlloyd](https://github.com/matthewlloyd))
+- Fixed "java.lang.RuntimeException: Methods marked with @UiThread must be executed on the main thread." [#98](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/98) (thanks to [DreamBuddy](https://github.com/DreamBuddy))
+- Fixed "app force close/crash when enabling zoom and repeatedly changing orientation and zoomin zoomout" [#93](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/93)
 - Added `displayZoomControls` webview option for Android
-- Fixed "Compatibility with other plugins" [#80](https://github.com/pichillilorenzo/flutter_inappwebview/issues/80)
+- Fixed "Compatibility with other plugins" [#80](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/80)
 
 ## 1.1.3
 
-- Merged "Add null checks around calls to InAppWebView callbacks" [#85](https://github.com/pichillilorenzo/flutter_inappwebview/pull/85) (thanks to [matthewlloyd](https://github.com/matthewlloyd))
+- Merged "Add null checks around calls to InAppWebView callbacks" [#85](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/85) (thanks to [matthewlloyd](https://github.com/matthewlloyd))
 
 ## 1.1.2
 
-- Fix InAppBrowser crashes the app when i change the page "Lost connection" [#74](https://github.com/pichillilorenzo/flutter_inappwebview/issues/74)
-- Fix javascript `...args` parameter of `window.flutter_inappwebview.callHandler()`
-- Merged Enable setTextZoom function of Android WebViewSetting [#81](https://github.com/pichillilorenzo/flutter_inappwebview/pull/81) (thanks to [YouCii](https://github.com/YouCii))
-- Merged bug fix for android build: Android dependency 'androidx.core:core' has different version for the compile (1.0.0) and runtime (1.0.1) classpath [#83](https://github.com/pichillilorenzo/flutter_inappwebview/pull/83) (thanks to [cinos1](https://github.com/cinos1))
+- Fix InAppBrowser crashes the app when i change the page "Lost connection" [#74](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/74)
+- Fix javascript `...args` parameter of `window.flutter_inappwebview_quill.callHandler()`
+- Merged Enable setTextZoom function of Android WebViewSetting [#81](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/81) (thanks to [YouCii](https://github.com/YouCii))
+- Merged bug fix for android build: Android dependency 'androidx.core:core' has different version for the compile (1.0.0) and runtime (1.0.1) classpath [#83](https://github.com/pichillilorenzo/flutter_inappwebview_quill/pull/83) (thanks to [cinos1](https://github.com/cinos1))
 
 ## 1.1.1
 
@@ -614,8 +618,8 @@
 ## 1.1.0
 
 - Breaking change for `addJavaScriptHandler` and `removeJavaScriptHandler` methods.
-- `addJavaScriptHandler` method can return data to JavaScript using `Promise` [#46](https://github.com/pichillilorenzo/flutter_inappwebview/issues/46)
-- added `flutterInAppBrowserPlatformReady` JavaScript event to wait until the platform is ready [#64](https://github.com/pichillilorenzo/flutter_inappwebview/issues/64)
+- `addJavaScriptHandler` method can return data to JavaScript using `Promise` [#46](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/46)
+- added `flutterInAppBrowserPlatformReady` JavaScript event to wait until the platform is ready [#64](https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/64)
 
 ## 1.0.1
 

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.in_app_webview;
+package com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -40,12 +40,12 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
-import com.pichillilorenzo.flutter_inappwebview.types.CreateWindowAction;
-import com.pichillilorenzo.flutter_inappwebview.in_app_browser.ActivityResultListener;
-import com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserDelegate;
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview.R;
-import com.pichillilorenzo.flutter_inappwebview.types.URLRequest;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.CreateWindowAction;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser.ActivityResultListener;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser.InAppBrowserDelegate;
+import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview_quill.R;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.URLRequest;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -69,7 +69,7 @@ public class InAppWebViewChromeClient extends WebChromeClient implements PluginR
   public static Map<Integer, Message> windowWebViewMessages = new HashMap<>();
   private static int windowAutoincrementId = 0;
 
-  private static final String fileProviderAuthorityExtension = "flutter_inappwebview.fileprovider";
+  private static final String fileProviderAuthorityExtension = "flutter_inappwebview_quill.fileprovider";
 
   private static final int PICKER = 1;
   private static final int PICKER_LEGACY = 3;

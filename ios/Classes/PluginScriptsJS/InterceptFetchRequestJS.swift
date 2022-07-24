@@ -1,6 +1,6 @@
 //
 //  InterceptFetchRequestsJS.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 16/02/21.
 //

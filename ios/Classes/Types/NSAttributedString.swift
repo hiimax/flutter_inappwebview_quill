@@ -1,6 +1,6 @@
 //
 //  NSAttributedString.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 05/03/21.
 //
@@ -12,9 +12,9 @@ extension NSAttributedString {
         guard let map = map, let string = map["string"] as? String else {
             return nil
         }
-        
+
         var attributes: [NSAttributedString.Key : Any] = [:]
-        
+
         if let backgroundColor = map["backgroundColor"] as? String {
             attributes[.backgroundColor] = UIColor(hexString: backgroundColor)
         }
@@ -57,7 +57,7 @@ extension NSAttributedString {
         if let underlineStyle = map["underlineStyle"] as? Int64 {
             attributes[.underlineStyle] = underlineStyle
         }
-        
+
         return NSAttributedString(string: string, attributes: attributes)
     }
 }

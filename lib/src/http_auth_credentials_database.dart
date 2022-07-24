@@ -11,7 +11,7 @@ import 'package:flutter/services.dart';
 class HttpAuthCredentialDatabase {
   static HttpAuthCredentialDatabase? _instance;
   static const MethodChannel _channel = const MethodChannel(
-      'com.pichillilorenzo/flutter_inappwebview_credential_database');
+      'com.pichillilorenzo/flutter_inappwebview_quill_credential_database');
 
   ///Gets the database shared instance.
   static HttpAuthCredentialDatabase instance() {

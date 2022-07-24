@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.types;
+package com.pichillilorenzo.flutter_inappwebview_quill.types;
 
 import java.util.Map;
 

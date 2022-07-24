@@ -19,6 +19,6 @@
  *
 */
 
-library flutter_inappwebview;
+library flutter_inappwebview_quill;
 
 export 'src/main.dart';

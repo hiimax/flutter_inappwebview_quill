@@ -24,7 +24,7 @@ import 'web_message/web_message_channel.dart';
 ///The Android implementation uses [addJavascriptInterface](https://developer.android.com/reference/android/webkit/WebView#addJavascriptInterface(java.lang.Object,%20java.lang.String)).
 ///The iOS implementation uses [addScriptMessageHandler](https://developer.apple.com/documentation/webkit/wkusercontentcontroller/1537172-addscriptmessagehandler?language=objc)
 ///
-///The JavaScript function that can be used to call the handler is `window.flutter_inappwebview.callHandler(handlerName <String>, ...args);`, where `args` are [rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
+///The JavaScript function that can be used to call the handler is `window.flutter_inappwebview_quill.callHandler(handlerName <String>, ...args);`, where `args` are [rest parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters).
 ///The `args` will be stringified automatically using `JSON.stringify(args)` method and then they will be decoded on the Dart side.
 ///
 ///Also, a [JavaScriptHandlerCallback] can return json data to the JavaScript side.
@@ -5571,7 +5571,7 @@ final _contentWorldNameRegExp = RegExp(r'[\s]');
 ///
 ///**NOTE for iOS**: available on iOS 14.0+. This class represents the native [WKContentWorld](https://developer.apple.com/documentation/webkit/wkcontentworld) class.
 ///
-///**NOTE for Android**: it will create and append an `<iframe>` HTML element with `id` attribute equals to `flutter_inappwebview_[name]`
+///**NOTE for Android**: it will create and append an `<iframe>` HTML element with `id` attribute equals to `flutter_inappwebview_quill_[name]`
 ///to the webpage's content that contains only the inline `<script>` HTML elements in order to define a new scope of execution for JavaScript code.
 ///Unfortunately, there isn't any other way to do it.
 ///There are some limitations:

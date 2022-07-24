@@ -23,7 +23,7 @@ import AVFoundation
 import SafariServices
 
 public class SwiftFlutterPlugin: NSObject, FlutterPlugin {
-    
+
     static var instance: SwiftFlutterPlugin?
     var registrar: FlutterPluginRegistrar?
     var platformUtil: PlatformUtil?
@@ -34,16 +34,16 @@ public class SwiftFlutterPlugin: NSObject, FlutterPlugin {
     var inAppBrowserManager: InAppBrowserManager?
     var headlessInAppWebViewManager: HeadlessInAppWebViewManager?
     var chromeSafariBrowserManager: ChromeSafariBrowserManager?
-    
+
     var webViewControllers: [String: InAppBrowserWebViewController?] = [:]
     var safariViewControllers: [String: Any?] = [:]
-    
+
     public init(with registrar: FlutterPluginRegistrar) {
         super.init()
-        
+
         self.registrar = registrar
-        registrar.register(FlutterWebViewFactory(registrar: registrar) as FlutterPlatformViewFactory, withId: "com.pichillilorenzo/flutter_inappwebview")
-        
+        registrar.register(FlutterWebViewFactory(registrar: registrar) as FlutterPlatformViewFactory, withId: "com.pichillilorenzo/flutter_inappwebview_quill")
+
         platformUtil = PlatformUtil(registrar: registrar)
         inAppBrowserManager = InAppBrowserManager(registrar: registrar)
         headlessInAppWebViewManager = HeadlessInAppWebViewManager(registrar: registrar)
@@ -57,11 +57,11 @@ public class SwiftFlutterPlugin: NSObject, FlutterPlugin {
             myWebStorageManager = MyWebStorageManager(registrar: registrar)
         }
     }
-    
+
     public static func register(with registrar: FlutterPluginRegistrar) {
         SwiftFlutterPlugin.instance = SwiftFlutterPlugin(with: registrar)
     }
-    
+
     public func detachFromEngine(for registrar: FlutterPluginRegistrar) {
         platformUtil?.dispose()
         platformUtil = nil

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.in_app_browser;
+package com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser;
 
 import android.content.Intent;
 

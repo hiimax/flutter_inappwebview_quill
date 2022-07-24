@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.in_app_webview;
+package com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview;
 
 import android.content.Context;
 import android.hardware.display.DisplayManager;
@@ -17,14 +17,14 @@ import androidx.annotation.NonNull;
 import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
 
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewMethodHandler;
-import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.JavaScriptBridgeJS;
-import com.pichillilorenzo.flutter_inappwebview.pull_to_refresh.PullToRefreshLayout;
-import com.pichillilorenzo.flutter_inappwebview.pull_to_refresh.PullToRefreshOptions;
-import com.pichillilorenzo.flutter_inappwebview.types.PlatformWebView;
-import com.pichillilorenzo.flutter_inappwebview.types.URLRequest;
-import com.pichillilorenzo.flutter_inappwebview.types.UserScript;
+import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewMethodHandler;
+import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.JavaScriptBridgeJS;
+import com.pichillilorenzo.flutter_inappwebview_quill.pull_to_refresh.PullToRefreshLayout;
+import com.pichillilorenzo.flutter_inappwebview_quill.pull_to_refresh.PullToRefreshOptions;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.PlatformWebView;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.URLRequest;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.UserScript;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -45,12 +45,12 @@ public class FlutterWebView implements PlatformWebView {
 
   public FlutterWebView(final InAppWebViewFlutterPlugin plugin, final Context context, Object id,
                         HashMap<String, Object> params) {
-    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_" + id);
+    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_" + id);
 
     DisplayListenerProxy displayListenerProxy = new DisplayListenerProxy();
     DisplayManager displayManager = (DisplayManager) context.getSystemService(Context.DISPLAY_SERVICE);
     displayListenerProxy.onPreWebViewInitialization(displayManager);
-    
+
     Map<String, Object> initialOptions = (Map<String, Object>) params.get("initialOptions");
     Map<String, Object> contextMenu = (Map<String, Object>) params.get("contextMenu");
     Integer windowId = (Integer) params.get("windowId");
@@ -62,7 +62,7 @@ public class FlutterWebView implements PlatformWebView {
 
     if (plugin == null || plugin.activity == null) {
       Log.e(LOG_TAG, "\n\n\nERROR: You need to upgrade your Flutter project to use the new Java Embedding API:\n\n" +
-              "- Take a look at the \"IMPORTANT Note for Android\" section here: https://github.com/pichillilorenzo/flutter_inappwebview#important-note-for-android\n" +
+              "- Take a look at the \"IMPORTANT Note for Android\" section here: https://github.com/pichillilorenzo/flutter_inappwebview_quill#important-note-for-android\n" +
               "- See the official wiki here: https://github.com/flutter/flutter/wiki/Upgrading-pre-1.12-Android-projects\n\n\n");
       return;
     }
@@ -80,7 +80,7 @@ public class FlutterWebView implements PlatformWebView {
     if (options.useHybridComposition) {
       // set MATCH_PARENT layout params to the WebView, otherwise it won't take all the available space!
       webView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-      MethodChannel pullToRefreshLayoutChannel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_pull_to_refresh_" + id);
+      MethodChannel pullToRefreshLayoutChannel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_pull_to_refresh_" + id);
       PullToRefreshOptions pullToRefreshOptions = new PullToRefreshOptions();
       pullToRefreshOptions.parse(pullToRefreshInitialOptions);
       pullToRefreshLayout = new PullToRefreshLayout(context, pullToRefreshLayoutChannel, pullToRefreshOptions);
@@ -160,7 +160,7 @@ public class FlutterWebView implements PlatformWebView {
           webView.dispose();
           webView.destroy();
           webView = null;
-          
+
           if (pullToRefreshLayout != null) {
             pullToRefreshLayout.dispose();
             pullToRefreshLayout = null;

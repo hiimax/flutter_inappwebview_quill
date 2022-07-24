@@ -1,6 +1,6 @@
 //
 //  Util.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 12/02/21.
 //
@@ -18,7 +18,7 @@ public class Util {
         }
         return assetURL
     }
-    
+
     public static func getAbsPathAsset(assetFilePath: String) throws -> String {
         let key = SwiftFlutterPlugin.instance?.registrar?.lookupKey(forAsset: assetFilePath)
         guard let assetAbsPath = Bundle.main.path(forResource: key, ofType: nil) else {
@@ -26,7 +26,7 @@ public class Util {
         }
         return assetAbsPath
     }
-    
+
     public static func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
             do {
@@ -50,7 +50,7 @@ public class Util {
         }
         return ""
     }
-    
+
     @available(iOS 14.0, *)
     public static func getContentWorld(name: String) -> WKContentWorld {
         switch name {
@@ -62,7 +62,7 @@ public class Util {
             return WKContentWorld.world(name: name)
         }
     }
-    
+
     @available(iOS 10.0, *)
     public static func getDataDetectorType(type: String) -> WKDataDetectorTypes {
         switch type {
@@ -90,7 +90,7 @@ public class Util {
                 return WKDataDetectorTypes.init(rawValue: 0)
         }
     }
-    
+
     @available(iOS 10.0, *)
     public static func getDataDetectorTypeString(type: WKDataDetectorTypes) -> [String] {
         var dataDetectorTypeString: [String] = []
@@ -127,7 +127,7 @@ public class Util {
         }
         return dataDetectorTypeString
     }
-    
+
     public static func getDecelerationRate(type: String) -> UIScrollView.DecelerationRate {
         switch type {
             case "NORMAL":
@@ -138,7 +138,7 @@ public class Util {
                 return .normal
         }
     }
-    
+
     public static func getDecelerationRateString(type: UIScrollView.DecelerationRate) -> String {
         switch type {
             case .normal:
@@ -149,7 +149,7 @@ public class Util {
                 return "NORMAL"
         }
     }
-    
+
     public static func isIPv4(address: String) -> Bool {
         var sin = sockaddr_in()
         return address.withCString({ cstring in inet_pton(AF_INET, cstring, &sin.sin_addr) }) == 1
@@ -163,7 +163,7 @@ public class Util {
     public static func isIpAddress(address: String) -> Bool {
         return Util.isIPv6(address: address) || Util.isIPv4(address: address)
     }
-    
+
     public static func normalizeIPv6(address: String) throws -> String {
         if !Util.isIPv6(address: address) {
             throw NSError(domain: "Invalid address: \(address)", code: 0)
@@ -192,14 +192,14 @@ public class Util {
                 ipString += ipv4Converted[0] + ipv4Converted[1] + ":" + ipv4Converted[2] + ipv4Converted[3]
             }
         }
-        
+
         // take care of leading and trailing ::
         let regex = try! NSRegularExpression(pattern: "^:|:$")
         ipString = regex.stringByReplacingMatches(in: ipString, options: [], range: NSRange(location: 0, length: ipString.count), withTemplate: "")
-        
+
         let ipv6 = ipString.split(separator: ":", omittingEmptySubsequences: false)
         var fullIPv6 = Array(repeating: "0000", count: ipv6.count)
-        
+
         for (i, hex) in ipv6.enumerated() {
             if !hex.isEmpty {
                 // normalize leading zeros
@@ -219,7 +219,7 @@ public class Util {
                 fullIPv6[i] = zeros.joined(separator: ":")
             }
         }
-        
+
         return fullIPv6.joined(separator: ":")
     }
 

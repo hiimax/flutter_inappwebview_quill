@@ -1,7 +1,7 @@
-package com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js;
+package com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js;
 
-import com.pichillilorenzo.flutter_inappwebview.types.PluginScript;
-import com.pichillilorenzo.flutter_inappwebview.types.UserScriptInjectionTime;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.PluginScript;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.UserScriptInjectionTime;
 
 public class InterceptAjaxRequestJS {
 
@@ -21,14 +21,14 @@ public class InterceptAjaxRequestJS {
           "  var send = ajax.prototype.send;" +
           "  var open = ajax.prototype.open;" +
           "  var setRequestHeader = ajax.prototype.setRequestHeader;" +
-          "  ajax.prototype._flutter_inappwebview_url = null;" +
-          "  ajax.prototype._flutter_inappwebview_method = null;" +
-          "  ajax.prototype._flutter_inappwebview_isAsync = null;" +
-          "  ajax.prototype._flutter_inappwebview_user = null;" +
-          "  ajax.prototype._flutter_inappwebview_password = null;" +
-          "  ajax.prototype._flutter_inappwebview_password = null;" +
-          "  ajax.prototype._flutter_inappwebview_already_onreadystatechange_wrapped = false;" +
-          "  ajax.prototype._flutter_inappwebview_request_headers = {};" +
+          "  ajax.prototype._flutter_inappwebview_quill_url = null;" +
+          "  ajax.prototype._flutter_inappwebview_quill_method = null;" +
+          "  ajax.prototype._flutter_inappwebview_quill_isAsync = null;" +
+          "  ajax.prototype._flutter_inappwebview_quill_user = null;" +
+          "  ajax.prototype._flutter_inappwebview_quill_password = null;" +
+          "  ajax.prototype._flutter_inappwebview_quill_password = null;" +
+          "  ajax.prototype._flutter_inappwebview_quill_already_onreadystatechange_wrapped = false;" +
+          "  ajax.prototype._flutter_inappwebview_quill_request_headers = {};" +
           "  function convertRequestResponse(request, callback) {" +
           "    if (request.response != null && request.responseType != null) {" +
           "      switch (request.responseType) {" +
@@ -54,16 +54,16 @@ public class InterceptAjaxRequestJS {
           "  };" +
           "  ajax.prototype.open = function(method, url, isAsync, user, password) {" +
           "    isAsync = (isAsync != null) ? isAsync : true;" +
-          "    this._flutter_inappwebview_url = url;" +
-          "    this._flutter_inappwebview_method = method;" +
-          "    this._flutter_inappwebview_isAsync = isAsync;" +
-          "    this._flutter_inappwebview_user = user;" +
-          "    this._flutter_inappwebview_password = password;" +
-          "    this._flutter_inappwebview_request_headers = {};" +
+          "    this._flutter_inappwebview_quill_url = url;" +
+          "    this._flutter_inappwebview_quill_method = method;" +
+          "    this._flutter_inappwebview_quill_isAsync = isAsync;" +
+          "    this._flutter_inappwebview_quill_user = user;" +
+          "    this._flutter_inappwebview_quill_password = password;" +
+          "    this._flutter_inappwebview_quill_request_headers = {};" +
           "    open.call(this, method, url, isAsync, user, password);" +
           "  };" +
           "  ajax.prototype.setRequestHeader = function(header, value) {" +
-          "    this._flutter_inappwebview_request_headers[header] = value;" +
+          "    this._flutter_inappwebview_quill_request_headers[header] = value;" +
           "    setRequestHeader.call(this, header, value);" +
           "  };" +
           "  function handleEvent(e) {" +
@@ -83,13 +83,13 @@ public class InterceptAjaxRequestJS {
           "      }" +
           "      convertRequestResponse(this, function(response) {" +
           "        var ajaxRequest = {" +
-          "          method: self._flutter_inappwebview_method," +
-          "          url: self._flutter_inappwebview_url," +
-          "          isAsync: self._flutter_inappwebview_isAsync," +
-          "          user: self._flutter_inappwebview_user," +
-          "          password: self._flutter_inappwebview_password," +
+          "          method: self._flutter_inappwebview_quill_method," +
+          "          url: self._flutter_inappwebview_quill_url," +
+          "          isAsync: self._flutter_inappwebview_quill_isAsync," +
+          "          user: self._flutter_inappwebview_quill_user," +
+          "          password: self._flutter_inappwebview_quill_password," +
           "          withCredentials: self.withCredentials," +
-          "          headers: self._flutter_inappwebview_request_headers," +
+          "          headers: self._flutter_inappwebview_quill_request_headers," +
           "          readyState: self.readyState," +
           "          status: self.status," +
           "          responseURL: self.responseURL," +
@@ -122,8 +122,8 @@ public class InterceptAjaxRequestJS {
           "    var self = this;" +
           "    var w = (window.top == null || window.top === window) ? window : window.top;" +
           "    if (w." + FLAG_VARIABLE_FOR_SHOULD_INTERCEPT_AJAX_REQUEST_JS_SOURCE + " == null || w." + FLAG_VARIABLE_FOR_SHOULD_INTERCEPT_AJAX_REQUEST_JS_SOURCE + " == true) {" +
-          "      if (!this._flutter_inappwebview_already_onreadystatechange_wrapped) {" +
-          "        this._flutter_inappwebview_already_onreadystatechange_wrapped = true;" +
+          "      if (!this._flutter_inappwebview_quill_already_onreadystatechange_wrapped) {" +
+          "        this._flutter_inappwebview_quill_already_onreadystatechange_wrapped = true;" +
           "        var onreadystatechange = this.onreadystatechange;" +
           "        this.onreadystatechange = function() {" +
           "          var w = (window.top == null || window.top === window) ? window : window.top;" +
@@ -141,13 +141,13 @@ public class InterceptAjaxRequestJS {
           "            }" +
           "            convertRequestResponse(this, function(response) {" +
           "              var ajaxRequest = {" +
-          "                method: self._flutter_inappwebview_method," +
-          "                url: self._flutter_inappwebview_url," +
-          "                isAsync: self._flutter_inappwebview_isAsync," +
-          "                user: self._flutter_inappwebview_user," +
-          "                password: self._flutter_inappwebview_password," +
+          "                method: self._flutter_inappwebview_quill_method," +
+          "                url: self._flutter_inappwebview_quill_url," +
+          "                isAsync: self._flutter_inappwebview_quill_isAsync," +
+          "                user: self._flutter_inappwebview_quill_user," +
+          "                password: self._flutter_inappwebview_quill_password," +
           "                withCredentials: self.withCredentials," +
-          "                headers: self._flutter_inappwebview_request_headers," +
+          "                headers: self._flutter_inappwebview_quill_request_headers," +
           "                readyState: self.readyState," +
           "                status: self.status," +
           "                responseURL: self.responseURL," +
@@ -186,13 +186,13 @@ public class InterceptAjaxRequestJS {
           "      " + JavaScriptBridgeJS.JAVASCRIPT_UTIL_VAR_NAME + ".convertBodyRequest(data).then(function(data) {" +
           "        var ajaxRequest = {" +
           "          data: data," +
-          "          method: self._flutter_inappwebview_method," +
-          "          url: self._flutter_inappwebview_url," +
-          "          isAsync: self._flutter_inappwebview_isAsync," +
-          "          user: self._flutter_inappwebview_user," +
-          "          password: self._flutter_inappwebview_password," +
+          "          method: self._flutter_inappwebview_quill_method," +
+          "          url: self._flutter_inappwebview_quill_url," +
+          "          isAsync: self._flutter_inappwebview_quill_isAsync," +
+          "          user: self._flutter_inappwebview_quill_user," +
+          "          password: self._flutter_inappwebview_quill_password," +
           "          withCredentials: self.withCredentials," +
-          "          headers: self._flutter_inappwebview_request_headers," +
+          "          headers: self._flutter_inappwebview_quill_request_headers," +
           "          responseType: self.responseType" +
           "        };" +
           "        window." + JavaScriptBridgeJS.JAVASCRIPT_BRIDGE_NAME + ".callHandler('shouldInterceptAjaxRequest', ajaxRequest).then(function(result) {" +
@@ -224,15 +224,15 @@ public class InterceptAjaxRequestJS {
           "            };" +
           "            for (var header in result.headers) {" +
           "              var value = result.headers[header];" +
-          "              var flutter_inappwebview_value = self._flutter_inappwebview_request_headers[header];" +
-          "              if (flutter_inappwebview_value == null) {" +
-          "                self._flutter_inappwebview_request_headers[header] = value;" +
+          "              var flutter_inappwebview_quill_value = self._flutter_inappwebview_quill_request_headers[header];" +
+          "              if (flutter_inappwebview_quill_value == null) {" +
+          "                self._flutter_inappwebview_quill_request_headers[header] = value;" +
           "              } else {" +
-          "                self._flutter_inappwebview_request_headers[header] += ', ' + value;" +
+          "                self._flutter_inappwebview_quill_request_headers[header] += ', ' + value;" +
           "              }" +
           "              setRequestHeader.call(self, header, value);" +
           "            };" +
-          "            if ((self._flutter_inappwebview_method != result.method && result.method != null) || (self._flutter_inappwebview_url != result.url && result.url != null)) {" +
+          "            if ((self._flutter_inappwebview_quill_method != result.method && result.method != null) || (self._flutter_inappwebview_quill_url != result.url && result.url != null)) {" +
           "              self.abort();" +
           "              self.open(result.method, result.url, result.isAsync, result.user, result.password);" +
           "              return;" +

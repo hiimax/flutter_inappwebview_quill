@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.webkit.ValueCallback;
 import android.webkit.WebStorage;
@@ -24,7 +24,7 @@ public class MyWebStorage implements MethodChannel.MethodCallHandler {
 
   public MyWebStorage(final InAppWebViewFlutterPlugin plugin) {
     this.plugin = plugin;
-    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_webstoragemanager");
+    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_webstoragemanager");
     channel.setMethodCallHandler(this);
     webStorageManager = WebStorage.getInstance();
   }

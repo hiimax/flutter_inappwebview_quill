@@ -1,6 +1,6 @@
 //
 //  WKContentWorld.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 19/02/21.
 //
@@ -12,7 +12,7 @@ import WebKit
 extension WKContentWorld {
     // Workaround to create stored properties in an extension:
     // https://valv0.medium.com/computed-properties-and-extensions-a-pure-swift-approach-64733768112c
-    
+
     private static var _windowId = [String: Int64?]()
 
     var windowId: Int64? {
@@ -25,7 +25,7 @@ extension WKContentWorld {
             WKContentWorld._windowId[tmpAddress] = newValue
         }
     }
-    
+
     public static func fromMap(map: [String:Any?]?, windowId: Int64?) -> WKContentWorld? {
         guard let map = map else {
             return nil

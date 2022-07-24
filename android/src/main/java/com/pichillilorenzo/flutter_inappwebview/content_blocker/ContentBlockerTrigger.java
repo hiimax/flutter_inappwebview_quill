@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.content_blocker;
+package com.pichillilorenzo.flutter_inappwebview_quill.content_blocker;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

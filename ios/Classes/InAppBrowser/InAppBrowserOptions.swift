@@ -1,6 +1,6 @@
 //
 //  InAppBrowserOptions.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo on 17/09/18.
 //
@@ -9,13 +9,13 @@ import Foundation
 
 @objcMembers
 public class InAppBrowserOptions: Options<InAppBrowserWebViewController> {
-    
+
     var hidden = false
     var hideToolbarTop = true
     var toolbarTopBackgroundColor: String?
     var hideUrlBar = false
     var hideProgressBar = false
-    
+
     var toolbarTopTranslucent = true
     var toolbarTopBarTintColor: String?
     var toolbarTopTintColor: String?
@@ -27,11 +27,11 @@ public class InAppBrowserOptions: Options<InAppBrowserWebViewController> {
     var closeButtonColor: String?
     var presentationStyle = 0 //fullscreen
     var transitionStyle = 0 //crossDissolve
-    
+
     override init(){
         super.init()
     }
-    
+
     override func getRealOptions(obj: InAppBrowserWebViewController?) -> [String: Any?] {
         var realOptions: [String: Any?] = toMap()
         if let inAppBrowserWebViewController = obj {

@@ -1,6 +1,6 @@
 //
 //  SslCertificate.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 15/02/21.
 //
@@ -13,11 +13,11 @@ public class SslCertificate: NSObject {
     var issuedTo: Any?
     var validNotAfterDate: Any?
     var validNotBeforeDate: Any?
-    
+
     public init(x509Certificate: Data) {
         self.x509Certificate = x509Certificate
     }
-    
+
     public func toMap () -> [String:Any?] {
         return [
             "x509Certificate": x509Certificate,

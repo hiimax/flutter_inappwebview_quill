@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs;
+package com.pichillilorenzo.flutter_inappwebview_quill.chrome_custom_tabs;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,8 +6,8 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview.Util;
+import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview_quill.Util;
 
 import java.io.Serializable;
 import java.util.HashMap;

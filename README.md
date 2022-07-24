@@ -1,16 +1,16 @@
-# Flutter InAppWebView Plugin [![Share on Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Flutter%20InAppBrowser%20plugin!&url=https://github.com/pichillilorenzo/flutter_inappwebview&hashtags=flutter,flutterio,dart,dartlang,webview) [![Share on Facebook](https://img.shields.io/badge/share-facebook-blue.svg?longCache=true&style=flat&colorB=%234267b2)](https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/pichillilorenzo/flutter_inappwebview)
+# Flutter InAppWebView Plugin [![Share on Twitter](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Flutter%20InAppBrowser%20plugin!&url=https://github.com/pichillilorenzo/flutter_inappwebview_quill&hashtags=flutter,flutterio,dart,dartlang,webview) [![Share on Facebook](https://img.shields.io/badge/share-facebook-blue.svg?longCache=true&style=flat&colorB=%234267b2)](https://www.facebook.com/sharer/sharer.php?u=https%3A//github.com/pichillilorenzo/flutter_inappwebview_quill)
 
-[![Pub](https://img.shields.io/pub/v/flutter_inappwebview.svg)](https://pub.dartlang.org/packages/flutter_inappwebview)
-[![pub points](https://badges.bar/flutter_inappwebview/pub%20points)](https://pub.dev/packages/flutter_inappwebview/score)
-[![popularity](https://badges.bar/flutter_inappwebview/popularity)](https://pub.dev/packages/flutter_inappwebview/score)
-[![likes](https://badges.bar/flutter_inappwebview/likes)](https://pub.dev/packages/flutter_inappwebview/score)
+[![Pub](https://img.shields.io/pub/v/flutter_inappwebview_quill.svg)](https://pub.dartlang.org/packages/flutter_inappwebview_quill)
+[![pub points](https://badges.bar/flutter_inappwebview_quill/pub%20points)](https://pub.dev/packages/flutter_inappwebview_quill/score)
+[![popularity](https://badges.bar/flutter_inappwebview_quill/popularity)](https://pub.dev/packages/flutter_inappwebview_quill/score)
+[![likes](https://badges.bar/flutter_inappwebview_quill/likes)](https://pub.dev/packages/flutter_inappwebview_quill/score)
 [![Awesome Flutter](https://img.shields.io/badge/Awesome-Flutter-blue.svg?longCache=true&style=flat-square)](https://stackoverflow.com/questions/tagged/flutter-inappwebview)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](/LICENSE)
 
 [![Donate to this project](https://img.shields.io/badge/support-donate-yellow.svg)](https://inappwebview.dev/donate/)
-[![GitHub contributors](https://img.shields.io/github/contributors/pichillilorenzo/flutter_inappwebview)](https://github.com/pichillilorenzo/flutter_inappwebview/graphs/contributors)
-[![GitHub forks](https://img.shields.io/github/forks/pichillilorenzo/flutter_inappwebview?style=social)](https://github.com/pichillilorenzo/flutter_inappwebview)
-[![GitHub stars](https://img.shields.io/github/stars/pichillilorenzo/flutter_inappwebview?style=social)](https://github.com/pichillilorenzo/flutter_inappwebview)
+[![GitHub contributors](https://img.shields.io/github/contributors/pichillilorenzo/flutter_inappwebview_quill)](https://github.com/pichillilorenzo/flutter_inappwebview_quill/graphs/contributors)
+[![GitHub forks](https://img.shields.io/github/forks/pichillilorenzo/flutter_inappwebview_quill?style=social)](https://github.com/pichillilorenzo/flutter_inappwebview_quill)
+[![GitHub stars](https://img.shields.io/github/stars/pichillilorenzo/flutter_inappwebview_quill?style=social)](https://github.com/pichillilorenzo/flutter_inappwebview_quill)
 
 
 ![InAppWebView-logo](https://user-images.githubusercontent.com/5956938/110180687-8751f480-7e0a-11eb-89cc-d62f85c148cb.png)
@@ -20,11 +20,11 @@ A Flutter plugin that allows you to add an inline webview, to use an headless we
 ## Articles/Resources
 
 - [Official documentation: inappwebview.dev/docs](https://inappwebview.dev/docs/)
-- Read the online [API Reference](https://pub.dartlang.org/documentation/flutter_inappwebview/latest/) to get the **full API documentation**.
+- Read the online [API Reference](https://pub.dartlang.org/documentation/flutter_inappwebview_quill/latest/) to get the **full API documentation**.
 - [Official blog: inappwebview.dev/blog](https://inappwebview.dev/blog/)
 - Find open source projects on the [Official Showcase page: inappwebview.dev/showcase](https://inappwebview.dev/showcase/)
-- Check the [example/integration_test/webview_flutter_test.dart](https://github.com/pichillilorenzo/flutter_inappwebview/blob/master/example/integration_test/webview_flutter_test.dart) file for other code examples
-- [Flutter Browser App](https://github.com/pichillilorenzo/flutter_browser_app): A Full-Featured Mobile Browser App (such as the Google Chrome mobile browser) created using Flutter and the features offered by the flutter_inappwebview plugin
+- Check the [example/integration_test/webview_flutter_test.dart](https://github.com/pichillilorenzo/flutter_inappwebview_quill/blob/master/example/integration_test/webview_flutter_test.dart) file for other code examples
+- [Flutter Browser App](https://github.com/pichillilorenzo/flutter_browser_app): A Full-Featured Mobile Browser App (such as the Google Chrome mobile browser) created using Flutter and the features offered by the flutter_inappwebview_quill plugin
 
 ## Showcase - Who use it
 
@@ -43,7 +43,7 @@ Send a submission request to the [Submit App](https://inappwebview.dev/submit-ap
 
 ## Installation
 
-Add `flutter_inappwebview` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
+Add `flutter_inappwebview_quill` as a [dependency in your pubspec.yaml file](https://flutter.io/using-packages/).
 
 ## Main Classes Overview
 

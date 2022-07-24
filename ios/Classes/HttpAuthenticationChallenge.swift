@@ -1,6 +1,6 @@
 //
 //  HttpAuthenticationChallenge.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 15/02/21.
 //
@@ -13,7 +13,7 @@ class HttpAuthenticationChallenge: NSObject {
     var failureResponse: URLResponse?
     var error: Error?
     var proposedCredential: URLCredential?
-    
+
     public init(fromChallenge: URLAuthenticationChallenge) {
         protectionSpace = fromChallenge.protectionSpace
         previousFailureCount = fromChallenge.previousFailureCount
@@ -21,7 +21,7 @@ class HttpAuthenticationChallenge: NSObject {
         error = fromChallenge.error
         proposedCredential = fromChallenge.proposedCredential
     }
-    
+
     public func toMap () -> [String:Any?] {
         return [
             "protectionSpace": protectionSpace.toMap(),

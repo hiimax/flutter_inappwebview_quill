@@ -1,7 +1,7 @@
 name: flutter_inappwebview_quill
 description: A fork of flutter_inappwebview made to work on Xcode 14 and iOS 16 betas
 version: 5.4.4
-homepage: https://github.com/garv-shah/flutter_inappwebview
+homepage: https://github.com/garv-shah/flutter_inappwebview_quill
 
 environment:
   sdk: ">=2.14.0 <3.0.0"
@@ -24,14 +24,14 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.pichillilorenzo.flutter_inappwebview
+        package: com.pichillilorenzo.flutter_inappwebview_quill
         pluginClass: InAppWebViewFlutterPlugin
       ios:
         pluginClass: InAppWebViewFlutterPlugin
 
   assets:
-    - packages/flutter_inappwebview/assets/t_rex_runner/t-rex.html
-    - packages/flutter_inappwebview/assets/t_rex_runner/t-rex.css
+    - packages/flutter_inappwebview_quill/assets/t_rex_runner/t-rex.html
+    - packages/flutter_inappwebview_quill/assets/t_rex_runner/t-rex.css
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

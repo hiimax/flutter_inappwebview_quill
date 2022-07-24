@@ -388,7 +388,7 @@ class _InAppWebViewState extends State<InAppWebView> {
 
       if (useHybridComposition) {
         return PlatformViewLink(
-          viewType: 'com.pichillilorenzo/flutter_inappwebview',
+          viewType: 'com.pichillilorenzo/flutter_inappwebview_quill',
           surfaceFactory: (
             BuildContext context,
             PlatformViewController controller,
@@ -403,7 +403,7 @@ class _InAppWebViewState extends State<InAppWebView> {
           onCreatePlatformView: (PlatformViewCreationParams params) {
             return PlatformViewsService.initSurfaceAndroidView(
               id: params.id,
-              viewType: 'com.pichillilorenzo/flutter_inappwebview',
+              viewType: 'com.pichillilorenzo/flutter_inappwebview_quill',
               layoutDirection: TextDirection.rtl,
               creationParams: <String, dynamic>{
                 'initialUrlRequest': widget.initialUrlRequest?.toMap(),
@@ -430,7 +430,7 @@ class _InAppWebViewState extends State<InAppWebView> {
         );
       } else {
         return AndroidView(
-          viewType: 'com.pichillilorenzo/flutter_inappwebview',
+          viewType: 'com.pichillilorenzo/flutter_inappwebview_quill',
           onPlatformViewCreated: _onPlatformViewCreated,
           gestureRecognizers: widget.gestureRecognizers,
           layoutDirection: Directionality.maybeOf(context) ?? TextDirection.rtl,
@@ -453,7 +453,7 @@ class _InAppWebViewState extends State<InAppWebView> {
       }
     } else if (defaultTargetPlatform == TargetPlatform.iOS) {
       return UiKitView(
-        viewType: 'com.pichillilorenzo/flutter_inappwebview',
+        viewType: 'com.pichillilorenzo/flutter_inappwebview_quill',
         onPlatformViewCreated: _onPlatformViewCreated,
         gestureRecognizers: widget.gestureRecognizers,
         creationParams: <String, dynamic>{
@@ -474,7 +474,7 @@ class _InAppWebViewState extends State<InAppWebView> {
       );
     }
     return Text(
-        '$defaultTargetPlatform is not yet supported by the flutter_inappwebview plugin');
+        '$defaultTargetPlatform is not yet supported by the flutter_inappwebview_quill plugin');
   }
 
   @override

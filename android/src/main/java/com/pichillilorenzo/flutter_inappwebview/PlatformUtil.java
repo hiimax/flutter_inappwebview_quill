@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.os.Build;
 
@@ -22,7 +22,7 @@ public class PlatformUtil implements MethodChannel.MethodCallHandler {
 
   public PlatformUtil(final InAppWebViewFlutterPlugin plugin) {
     this.plugin = plugin;
-    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_platformutil");
+    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_platformutil");
     channel.setMethodCallHandler(this);
   }
 

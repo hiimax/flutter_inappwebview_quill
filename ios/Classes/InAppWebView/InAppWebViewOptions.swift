@@ -1,6 +1,6 @@
 //
 //  InAppWebViewOptions.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo on 21/10/18.
 //
@@ -10,7 +10,7 @@ import WebKit
 
 @objcMembers
 public class InAppWebViewOptions: Options<InAppWebView> {
-    
+
     var useShouldOverrideUrlLoading = false
     var useOnLoadResource = false
     var useOnDownloadStart = false
@@ -70,11 +70,11 @@ public class InAppWebViewOptions: Options<InAppWebView> {
     var allowingReadAccessTo: String? = nil
     var disableLongPressContextMenuOnLinks = false
     var disableInputAccessoryView = false
-    
+
     override init(){
         super.init()
     }
-    
+
     override func parse(options: [String: Any?]) -> InAppWebViewOptions {
         let _ = super.parse(options: options)
         if #available(iOS 13.0, *) {} else {
@@ -82,7 +82,7 @@ public class InAppWebViewOptions: Options<InAppWebView> {
         }
         return self
     }
-    
+
     override func getRealOptions(obj: InAppWebView?) -> [String: Any?] {
         var realOptions: [String: Any?] = toMap()
         if let webView = obj {

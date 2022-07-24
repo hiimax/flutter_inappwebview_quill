@@ -1,10 +1,10 @@
-package com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js;
+package com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js;
 
-import com.pichillilorenzo.flutter_inappwebview.types.PluginScript;
-import com.pichillilorenzo.flutter_inappwebview.types.UserScriptInjectionTime;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.PluginScript;
+import com.pichillilorenzo.flutter_inappwebview_quill.types.UserScriptInjectionTime;
 
 public class JavaScriptBridgeJS {
-  public static final String JAVASCRIPT_BRIDGE_NAME = "flutter_inappwebview";
+  public static final String JAVASCRIPT_BRIDGE_NAME = "flutter_inappwebview_quill";
   public static final String JAVASCRIPT_BRIDGE_JS_PLUGIN_SCRIPT_GROUP_NAME = "IN_APP_WEBVIEW_JAVASCRIPT_BRIDGE_JS_PLUGIN_SCRIPT";
   public static final PluginScript JAVASCRIPT_BRIDGE_JS_PLUGIN_SCRIPT = new PluginScript(
           JavaScriptBridgeJS.JAVASCRIPT_BRIDGE_JS_PLUGIN_SCRIPT_GROUP_NAME,

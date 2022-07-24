@@ -1,6 +1,6 @@
 //
 //  WebMessageListenerJS.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 10/03/21.
 //
@@ -94,7 +94,7 @@ window.\(JAVASCRIPT_BRIDGE_NAME)._isOriginAllowed = function(allowedOriginRules,
         } catch {}
 
         var schemeAllowed = scheme == rule.scheme;
-        
+
         var hostAllowed = rule.host == null ||
             rule.host === "" ||
             host === rule.host ||

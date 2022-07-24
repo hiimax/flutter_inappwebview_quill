@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs;
+package com.pichillilorenzo.flutter_inappwebview_quill.chrome_custom_tabs;
 
 import android.content.ComponentName;
 import androidx.browser.customtabs.CustomTabsClient;

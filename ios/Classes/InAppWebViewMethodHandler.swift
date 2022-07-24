@@ -1,6 +1,6 @@
 //
 //  WebViewMethodHandler.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 01/02/21.
 //
@@ -10,15 +10,15 @@ import WebKit
 
 public class InAppWebViewMethodHandler: FlutterMethodCallDelegate {
     var webView: InAppWebView?
-    
+
     init(webView: InAppWebView) {
         super.init()
         self.webView = webView
     }
-    
+
     public override func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? NSDictionary
-        
+
         switch call.method {
             case "getUrl":
                 result(webView?.url?.absoluteString)
@@ -62,7 +62,7 @@ public class InAppWebViewMethodHandler: FlutterMethodCallDelegate {
                 break
             case "loadFile":
                 let assetFilePath = arguments!["assetFilePath"] as! String
-                
+
                 do {
                     try webView?.loadFile(assetFilePath: assetFilePath)
                 }
@@ -495,7 +495,7 @@ public class InAppWebViewMethodHandler: FlutterMethodCallDelegate {
                 if let webView = webView {
                     let message = arguments!["message"] as! [String: Any?]
                     let targetOrigin = arguments!["targetOrigin"] as! String
-                    
+
                     var ports: [WebMessagePort] = []
                     let portsMap = message["ports"] as? [[String: Any?]]
                     if let portsMap = portsMap {
@@ -552,11 +552,11 @@ public class InAppWebViewMethodHandler: FlutterMethodCallDelegate {
                 break
         }
     }
-    
+
     public func dispose() {
         webView = nil
     }
-    
+
     deinit {
         print("InAppWebViewMethodHandler - dealloc")
         dispose()

@@ -1,11 +1,11 @@
-package com.pichillilorenzo.flutter_inappwebview.types;
+package com.pichillilorenzo.flutter_inappwebview_quill.types;
 
 import android.net.http.SslCertificate;
 import android.os.Build;
 
 import androidx.annotation.Nullable;
 
-import com.pichillilorenzo.flutter_inappwebview.Util;
+import com.pichillilorenzo.flutter_inappwebview_quill.Util;
 
 import java.security.cert.CertificateEncodingException;
 import java.security.cert.X509Certificate;

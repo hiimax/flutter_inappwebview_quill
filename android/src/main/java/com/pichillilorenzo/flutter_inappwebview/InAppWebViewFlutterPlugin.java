@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,10 +8,10 @@ import android.webkit.ValueCallback;
 
 import androidx.annotation.Nullable;
 
-import com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs.ChromeSafariBrowserManager;
-import com.pichillilorenzo.flutter_inappwebview.credential_database.CredentialDatabaseHandler;
-import com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserManager;
-import com.pichillilorenzo.flutter_inappwebview.headless_in_app_webview.HeadlessInAppWebViewManager;
+import com.pichillilorenzo.flutter_inappwebview_quill.chrome_custom_tabs.ChromeSafariBrowserManager;
+import com.pichillilorenzo.flutter_inappwebview_quill.credential_database.CredentialDatabaseHandler;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser.InAppBrowserManager;
+import com.pichillilorenzo.flutter_inappwebview_quill.headless_in_app_webview.HeadlessInAppWebViewManager;
 
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
@@ -67,7 +67,7 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
     // Shared.activity could be null or not.
     // It depends on who is called first between onAttachedToEngine event and onAttachedToActivity event.
     //
-    // See https://github.com/pichillilorenzo/flutter_inappwebview/issues/390#issuecomment-647039084
+    // See https://github.com/pichillilorenzo/flutter_inappwebview_quill/issues/390#issuecomment-647039084
     onAttachedToEngine(
             binding.getApplicationContext(), binding.getBinaryMessenger(), this.activity, binding.getPlatformViewRegistry(), null);
   }
@@ -84,7 +84,7 @@ public class InAppWebViewFlutterPlugin implements FlutterPlugin, ActivityAware {
     chromeSafariBrowserManager = new ChromeSafariBrowserManager(this);
     flutterWebViewFactory = new FlutterWebViewFactory(this);
     platformViewRegistry.registerViewFactory(
-                    "com.pichillilorenzo/flutter_inappwebview", flutterWebViewFactory);
+                    "com.pichillilorenzo/flutter_inappwebview_quill", flutterWebViewFactory);
 
     platformUtil = new PlatformUtil(this);
     inAppWebViewStatic = new InAppWebViewStatic(this);

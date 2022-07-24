@@ -1,6 +1,6 @@
 //
 //  WebMessageListener.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 10/03/21.
 //
@@ -14,16 +14,16 @@ public class WebMessageListener : FlutterMethodCallDelegate {
     var allowedOriginRules: Set<String>
     var channel: FlutterMethodChannel?
     var webView: InAppWebView?
-    
+
     public init(jsObjectName: String, allowedOriginRules: Set<String>) {
         self.jsObjectName = jsObjectName
         self.allowedOriginRules = allowedOriginRules
         super.init()
-        self.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_web_message_listener_" + self.jsObjectName,
+        self.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_quill_web_message_listener_" + self.jsObjectName,
                                        binaryMessenger: SwiftFlutterPlugin.instance!.registrar!.messenger())
         self.channel?.setMethodCallHandler(self.handle)
     }
-    
+
     public func assertOriginRulesValid() throws {
         for (index, originRule) in allowedOriginRules.enumerated() {
             if originRule.isEmpty {
@@ -73,7 +73,7 @@ public class WebMessageListener : FlutterMethodCallDelegate {
             }
         }
     }
-    
+
     public func initJsInstance(webView: InAppWebView) {
         self.webView = webView
         if let webView = self.webView {
@@ -111,7 +111,7 @@ public class WebMessageListener : FlutterMethodCallDelegate {
             webView.configuration.userContentController.sync(scriptMessageHandler: webView)
         }
     }
-    
+
     public static func fromMap(map: [String:Any?]?) -> WebMessageListener? {
         guard let map = map else {
             return nil
@@ -121,10 +121,10 @@ public class WebMessageListener : FlutterMethodCallDelegate {
             allowedOriginRules: Set(map["allowedOriginRules"] as! [String])
         )
     }
-    
+
     public override func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? NSDictionary
-        
+
         switch call.method {
         case "postMessage":
             if let webView = webView {
@@ -156,7 +156,7 @@ public class WebMessageListener : FlutterMethodCallDelegate {
             break
         }
     }
-    
+
     public func isOriginAllowed(scheme: String?, host: String?, port: Int?) -> Bool {
         for allowedOriginRule in allowedOriginRules {
             if allowedOriginRule == "*" {
@@ -186,17 +186,17 @@ public class WebMessageListener : FlutterMethodCallDelegate {
                         hostIPv6 = try Util.normalizeIPv6(address: host)
                     } catch {}
                 }
-                
+
                 let schemeAllowed = scheme != nil && !scheme!.isEmpty && scheme == rule.scheme
-                
+
                 let hostAllowed = rule.host == nil ||
                     rule.host!.isEmpty ||
                     host == rule.host ||
                     (rule.host!.hasPrefix("*") && host != nil && host!.hasSuffix(rule.host!.split(separator: "*", omittingEmptySubsequences: false)[1])) ||
                     (hostIPv6 != nil && IPv6 != nil && hostIPv6 == IPv6)
-                
+
                 let portAllowed = rulePort == currentPort
-                
+
                 if schemeAllowed, hostAllowed, portAllowed {
                     return true
                 }
@@ -204,7 +204,7 @@ public class WebMessageListener : FlutterMethodCallDelegate {
         }
         return false
     }
-    
+
     public func onPostMessage(message: String?, sourceOrigin: URL?, isMainFrame: Bool) {
         let arguments: [String:Any?] = [
             "message": message,
@@ -219,7 +219,7 @@ public class WebMessageListener : FlutterMethodCallDelegate {
         channel = nil
         webView = nil
     }
-    
+
     deinit {
         print("WebMessageListener - dealloc")
         dispose()

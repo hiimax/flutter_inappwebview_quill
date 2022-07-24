@@ -1,6 +1,6 @@
 //
 //  InAppWebViewStatic.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 08/12/2019.
 //
@@ -13,21 +13,21 @@ class InAppWebViewStatic: NSObject, FlutterPlugin {
     static var channel: FlutterMethodChannel?
     static var webViewForUserAgent: WKWebView?
     static var defaultUserAgent: String?
-    
+
     static func register(with registrar: FlutterPluginRegistrar) {
-        
+
     }
-    
+
     init(registrar: FlutterPluginRegistrar) {
         super.init()
         InAppWebViewStatic.registrar = registrar
-        InAppWebViewStatic.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_static", binaryMessenger: registrar.messenger())
+        InAppWebViewStatic.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_quill_static", binaryMessenger: registrar.messenger())
         registrar.addMethodCallDelegate(self, channel: InAppWebViewStatic.channel!)
     }
-    
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? NSDictionary
-        
+
         switch call.method {
             case "getDefaultUserAgent":
                 InAppWebViewStatic.getDefaultUserAgent(completionHandler: { (value) in
@@ -47,7 +47,7 @@ class InAppWebViewStatic: NSObject, FlutterPlugin {
                 break
         }
     }
-    
+
     static public func getDefaultUserAgent(completionHandler: @escaping (_ value: String?) -> Void) {
         if defaultUserAgent == nil {
             InAppWebViewStatic.webViewForUserAgent = WKWebView()
@@ -72,7 +72,7 @@ class InAppWebViewStatic: NSObject, FlutterPlugin {
             completionHandler(defaultUserAgent)
         }
     }
-    
+
     public func dispose() {
         InAppWebViewStatic.channel?.setMethodCallHandler(nil)
         InAppWebViewStatic.channel = nil

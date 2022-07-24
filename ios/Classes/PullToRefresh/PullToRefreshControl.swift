@@ -1,6 +1,6 @@
 //
 //  File.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 03/03/21.
 //
@@ -9,26 +9,26 @@ import Foundation
 import Flutter
 
 public class PullToRefreshControl : UIRefreshControl, FlutterPlugin {
-    
+
     var channel: FlutterMethodChannel?
     var options: PullToRefreshOptions?
     var shouldCallOnRefresh = false
     var delegate: PullToRefreshDelegate?
-    
+
     public init(channel: FlutterMethodChannel?, options: PullToRefreshOptions?) {
         super.init()
         self.channel = channel
         self.options = options
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
+
     public static func register(with registrar: FlutterPluginRegistrar) {
-        
+
     }
-    
+
     public func prepare() {
         self.channel?.setMethodCallHandler(self.handle)
         if let options = options {
@@ -47,10 +47,10 @@ public class PullToRefreshControl : UIRefreshControl, FlutterPlugin {
         }
         addTarget(self, action: #selector(updateShouldCallOnRefresh), for: .valueChanged)
     }
-    
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         let arguments = call.arguments as? NSDictionary
-        
+
         switch call.method {
         case "setEnabled":
             let enabled = arguments!["enabled"] as! Bool
@@ -90,23 +90,23 @@ public class PullToRefreshControl : UIRefreshControl, FlutterPlugin {
             break
         }
     }
-    
+
     public func onRefresh() {
         shouldCallOnRefresh = false
         let arguments: [String: Any?] = [:]
         self.channel?.invokeMethod("onRefresh", arguments: arguments)
     }
-    
+
     @objc public func updateShouldCallOnRefresh() {
         shouldCallOnRefresh = true
     }
-    
+
     public func dispose() {
         channel?.setMethodCallHandler(nil)
         removeTarget(self, action: #selector(updateShouldCallOnRefresh), for: .valueChanged)
         delegate = nil
     }
-    
+
     deinit {
         print("PullToRefreshControl - dealloc")
         dispose()

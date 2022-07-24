@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs;
+package com.pichillilorenzo.flutter_inappwebview_quill.chrome_custom_tabs;
 
 import android.content.Intent;
 
@@ -7,7 +7,7 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.trusted.ScreenOrientation;
 import androidx.browser.trusted.TrustedWebActivityDisplayMode;
 
-import com.pichillilorenzo.flutter_inappwebview.Options;
+import com.pichillilorenzo.flutter_inappwebview_quill.Options;
 
 import java.util.ArrayList;
 import java.util.HashMap;

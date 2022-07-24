@@ -1,6 +1,6 @@
 //
 //  CustomeSchemeHandler.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 25/10/2019.
 //
@@ -12,7 +12,7 @@ import WebKit
 @available(iOS 11.0, *)
 class CustomeSchemeHandler : NSObject, WKURLSchemeHandler {
     var schemeHandlers: [Int:WKURLSchemeTask] = [:]
-    
+
     func webView(_ webView: WKWebView, start urlSchemeTask: WKURLSchemeTask) {
         schemeHandlers[urlSchemeTask.hash] = urlSchemeTask
         let inAppWebView = webView as! InAppWebView
@@ -39,7 +39,7 @@ class CustomeSchemeHandler : NSObject, WKURLSchemeHandler {
             })
         }
     }
-    
+
     func webView(_ webView: WKWebView, stop urlSchemeTask: WKURLSchemeTask) {
         schemeHandlers.removeValue(forKey: urlSchemeTask.hash)
     }

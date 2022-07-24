@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.types;
+package com.pichillilorenzo.flutter_inappwebview_quill.types;
 
 import android.webkit.ValueCallback;
 
@@ -9,8 +9,8 @@ import androidx.webkit.WebMessagePortCompat;
 import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
 
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebView;
-import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.JavaScriptBridgeJS;
+import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebView;
+import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.JavaScriptBridgeJS;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,7 +32,7 @@ public class WebMessageChannel implements MethodChannel.MethodCallHandler {
 
   public WebMessageChannel(@NonNull String id, @NonNull InAppWebViewInterface webView) {
     this.id = id;
-    this.channel = new MethodChannel(webView.getPlugin().messenger, "com.pichillilorenzo/flutter_inappwebview_web_message_channel_" + id);
+    this.channel = new MethodChannel(webView.getPlugin().messenger, "com.pichillilorenzo/flutter_inappwebview_quill_web_message_channel_" + id);
     this.channel.setMethodCallHandler(this);
     if (webView instanceof InAppWebView) {
       this.compatPorts = new ArrayList<>(Arrays.asList(WebViewCompat.createWebMessageChannel((InAppWebView) webView)));

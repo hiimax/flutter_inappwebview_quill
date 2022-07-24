@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.os.Build;
 import android.webkit.CookieManager;
@@ -30,7 +30,7 @@ public class MyCookieManager implements MethodChannel.MethodCallHandler {
 
   public MyCookieManager(final InAppWebViewFlutterPlugin plugin) {
     this.plugin = plugin;
-    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_cookiemanager");
+    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_cookiemanager");
     channel.setMethodCallHandler(this);
     cookieManager = getCookieManager();
   }

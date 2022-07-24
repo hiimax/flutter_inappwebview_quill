@@ -1,6 +1,6 @@
 //
 //  CredentialDatabase.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 29/10/2019.
 //
@@ -14,15 +14,15 @@ class CredentialDatabase: NSObject, FlutterPlugin {
     static var credentialStore: URLCredentialStorage?
 
     static func register(with registrar: FlutterPluginRegistrar) {
-        
+
     }
 
     init(registrar: FlutterPluginRegistrar) {
         super.init()
         CredentialDatabase.registrar = registrar
         CredentialDatabase.credentialStore = URLCredentialStorage.shared
-        
-        CredentialDatabase.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_credential_database", binaryMessenger: registrar.messenger())
+
+        CredentialDatabase.channel = FlutterMethodChannel(name: "com.pichillilorenzo/flutter_inappwebview_quill_credential_database", binaryMessenger: registrar.messenger())
         registrar.addMethodCallDelegate(self, channel: CredentialDatabase.channel!)
     }
 
@@ -57,7 +57,7 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                     result(crendentials)
                     return
                 }
-            
+
                 let host = arguments!["host"] as! String
                 let urlProtocol = arguments!["protocol"] as? String
                 let urlPort = arguments!["port"] as? Int ?? 0
@@ -82,7 +82,7 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                     result(false)
                     return
                 }
-            
+
                 let host = arguments!["host"] as! String
                 let urlProtocol = arguments!["protocol"] as? String
                 let urlPort = arguments!["port"] as? Int ?? 0
@@ -103,7 +103,7 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                     result(false)
                     return
                 }
-            
+
                 let host = arguments!["host"] as! String
                 let urlProtocol = arguments!["protocol"] as? String
                 let urlPort = arguments!["port"] as? Int ?? 0
@@ -113,10 +113,10 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                 }
                 let username = arguments!["username"] as! String
                 let password = arguments!["password"] as! String
-                
+
                 var credential: URLCredential? = nil;
                 var protectionSpaceCredential: URLProtectionSpace? = nil
-                
+
                 for (protectionSpace, credentials) in credentialStore.allCredentials {
                     if protectionSpace.host == host && protectionSpace.realm == realm &&
                     protectionSpace.protocol == urlProtocol && protectionSpace.port == urlPort {
@@ -132,11 +132,11 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                         break
                     }
                 }
-                
+
                 if let c = credential, let protectionSpace = protectionSpaceCredential {
                     credentialStore.remove(c, for: protectionSpace)
                 }
-                
+
                 result(true)
                 break
             case "removeHttpAuthCredentials":
@@ -144,7 +144,7 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                     result(false)
                     return
                 }
-            
+
                 let host = arguments!["host"] as! String
                 let urlProtocol = arguments!["protocol"] as? String
                 let urlPort = arguments!["port"] as? Int ?? 0
@@ -152,10 +152,10 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                 if let r = realm, r.isEmpty {
                     realm = nil
                 }
-                
+
                 var credentialsToRemove: [URLCredential] = [];
                 var protectionSpaceCredential: URLProtectionSpace? = nil
-                
+
                 for (protectionSpace, credentials) in credentialStore.allCredentials {
                     if protectionSpace.host == host && protectionSpace.realm == realm &&
                     protectionSpace.protocol == urlProtocol && protectionSpace.port == urlPort {
@@ -168,13 +168,13 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                         break
                     }
                 }
-                
+
                 if let protectionSpace = protectionSpaceCredential {
                     for credential in credentialsToRemove {
                         credentialStore.remove(credential, for: protectionSpace)
                     }
                 }
-                
+
                 result(true)
                 break
             case "clearAllAuthCredentials":
@@ -182,7 +182,7 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                     result(false)
                     return
                 }
-            
+
                 for (protectionSpace, credentials) in credentialStore.allCredentials {
                     for credential in credentials {
                         credentialStore.remove(credential.value, for: protectionSpace)
@@ -195,7 +195,7 @@ class CredentialDatabase: NSObject, FlutterPlugin {
                 break
         }
     }
-    
+
     public func dispose() {
         CredentialDatabase.channel?.setMethodCallHandler(nil)
         CredentialDatabase.channel = nil

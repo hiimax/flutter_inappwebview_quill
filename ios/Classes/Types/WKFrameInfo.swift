@@ -1,6 +1,6 @@
 //
 //  WKFrameInfo.swift
-//  flutter_inappwebview
+//  flutter_inappwebview_quill
 //
 //  Created by Lorenzo Pichilli on 19/02/21.
 //
@@ -9,7 +9,7 @@ import Foundation
 import WebKit
 
 extension WKFrameInfo {
-    
+
     public func toMap () -> [String:Any?] {
         var securityOrigin: [String:Any?]? = nil
         if #available(iOS 9.0, *) {

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.pichillilorenzo.flutter_inappwebview_quill;
 
 import android.content.pm.PackageInfo;
 import android.os.Build;
@@ -29,7 +29,7 @@ public class InAppWebViewStatic implements MethodChannel.MethodCallHandler {
 
   public InAppWebViewStatic(final InAppWebViewFlutterPlugin plugin) {
     this.plugin = plugin;
-    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_static");
+    channel = new MethodChannel(plugin.messenger, "com.pichillilorenzo/flutter_inappwebview_quill_static");
     channel.setMethodCallHandler(this);
   }
 

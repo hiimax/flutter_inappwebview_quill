@@ -21,7 +21,7 @@ import 'types.dart';
 class CookieManager {
   static CookieManager? _instance;
   static const MethodChannel _channel = const MethodChannel(
-      'com.pichillilorenzo/flutter_inappwebview_cookiemanager');
+      'com.pichillilorenzo/flutter_inappwebview_quill_cookiemanager');
 
   ///Contains only iOS-specific methods of [CookieManager].
   late IOSCookieManager ios;
