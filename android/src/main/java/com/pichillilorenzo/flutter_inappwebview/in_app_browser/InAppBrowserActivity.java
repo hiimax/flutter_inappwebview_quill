@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser;
+package com.pichillilorenzo.flutter_inappwebview.in_app_browser;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,16 +24,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewMethodHandler;
-import com.pichillilorenzo.flutter_inappwebview_quill.R;
-import com.pichillilorenzo.flutter_inappwebview_quill.Util;
-import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebView;
-import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebViewChromeClient;
-import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebViewOptions;
-import com.pichillilorenzo.flutter_inappwebview_quill.pull_to_refresh.PullToRefreshLayout;
-import com.pichillilorenzo.flutter_inappwebview_quill.pull_to_refresh.PullToRefreshOptions;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.URLRequest;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.UserScript;
+import com.pichillilorenzo.flutter_inappwebview.InAppWebViewMethodHandler;
+import com.pichillilorenzo.flutter_inappwebview.R;
+import com.pichillilorenzo.flutter_inappwebview.Util;
+import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebView;
+import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebViewChromeClient;
+import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebViewOptions;
+import com.pichillilorenzo.flutter_inappwebview.pull_to_refresh.PullToRefreshLayout;
+import com.pichillilorenzo.flutter_inappwebview.pull_to_refresh.PullToRefreshOptions;
+import com.pichillilorenzo.flutter_inappwebview.types.URLRequest;
+import com.pichillilorenzo.flutter_inappwebview.types.UserScript;
 
 import java.io.IOException;
 import java.util.ArrayList;

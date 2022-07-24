@@ -1,9 +1,9 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.credential_database;
+package com.pichillilorenzo.flutter_inappwebview.credential_database;
 
 import android.content.Context;
 
-import com.pichillilorenzo.flutter_inappwebview_quill.types.URLCredential;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.URLProtectionSpace;
+import com.pichillilorenzo.flutter_inappwebview.types.URLCredential;
+import com.pichillilorenzo.flutter_inappwebview.types.URLProtectionSpace;
 
 import java.util.ArrayList;
 import java.util.List;

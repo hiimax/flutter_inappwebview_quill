@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.types;
+package com.pichillilorenzo.flutter_inappwebview.types;
 
 public class ServerTrustChallenge extends URLAuthenticationChallenge {
   public ServerTrustChallenge(URLProtectionSpace protectionSpace) {

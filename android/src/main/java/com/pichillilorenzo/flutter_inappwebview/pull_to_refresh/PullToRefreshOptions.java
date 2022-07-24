@@ -1,8 +1,8 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.pull_to_refresh;
+package com.pichillilorenzo.flutter_inappwebview.pull_to_refresh;
 
 import androidx.annotation.Nullable;
 
-import com.pichillilorenzo.flutter_inappwebview_quill.Options;
+import com.pichillilorenzo.flutter_inappwebview.Options;
 
 import java.util.HashMap;
 import java.util.Map;

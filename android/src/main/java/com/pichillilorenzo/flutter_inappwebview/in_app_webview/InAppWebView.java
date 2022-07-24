@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview;
+package com.pichillilorenzo.flutter_inappwebview.in_app_webview;
 
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
@@ -53,36 +53,36 @@ import androidx.annotation.RequiresApi;
 import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
 
-import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview_quill.JavaScriptBridgeInterface;
-import com.pichillilorenzo.flutter_inappwebview_quill.R;
-import com.pichillilorenzo.flutter_inappwebview_quill.Util;
-import com.pichillilorenzo.flutter_inappwebview_quill.content_blocker.ContentBlocker;
-import com.pichillilorenzo.flutter_inappwebview_quill.content_blocker.ContentBlockerAction;
-import com.pichillilorenzo.flutter_inappwebview_quill.content_blocker.ContentBlockerHandler;
-import com.pichillilorenzo.flutter_inappwebview_quill.content_blocker.ContentBlockerTrigger;
-import com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser.InAppBrowserDelegate;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.ConsoleLogJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.InterceptAjaxRequestJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.InterceptFetchRequestJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.JavaScriptBridgeJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.OnLoadResourceJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.OnWindowBlurEventJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.OnWindowFocusEventJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.PluginScriptsUtil;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.PrintJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.PromisePolyfillJS;
-import com.pichillilorenzo.flutter_inappwebview_quill.pull_to_refresh.PullToRefreshLayout;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.ContentWorld;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.DownloadStartRequest;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.InAppWebViewInterface;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.PluginScript;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.PreferredContentModeOptionType;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.URLRequest;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.UserContentController;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.UserScript;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.WebMessageChannel;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.WebMessageListener;
+import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview.JavaScriptBridgeInterface;
+import com.pichillilorenzo.flutter_inappwebview.R;
+import com.pichillilorenzo.flutter_inappwebview.Util;
+import com.pichillilorenzo.flutter_inappwebview.content_blocker.ContentBlocker;
+import com.pichillilorenzo.flutter_inappwebview.content_blocker.ContentBlockerAction;
+import com.pichillilorenzo.flutter_inappwebview.content_blocker.ContentBlockerHandler;
+import com.pichillilorenzo.flutter_inappwebview.content_blocker.ContentBlockerTrigger;
+import com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserDelegate;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.ConsoleLogJS;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.InterceptAjaxRequestJS;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.InterceptFetchRequestJS;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.JavaScriptBridgeJS;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.OnLoadResourceJS;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.OnWindowBlurEventJS;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.OnWindowFocusEventJS;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.PluginScriptsUtil;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.PrintJS;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.PromisePolyfillJS;
+import com.pichillilorenzo.flutter_inappwebview.pull_to_refresh.PullToRefreshLayout;
+import com.pichillilorenzo.flutter_inappwebview.types.ContentWorld;
+import com.pichillilorenzo.flutter_inappwebview.types.DownloadStartRequest;
+import com.pichillilorenzo.flutter_inappwebview.types.InAppWebViewInterface;
+import com.pichillilorenzo.flutter_inappwebview.types.PluginScript;
+import com.pichillilorenzo.flutter_inappwebview.types.PreferredContentModeOptionType;
+import com.pichillilorenzo.flutter_inappwebview.types.URLRequest;
+import com.pichillilorenzo.flutter_inappwebview.types.UserContentController;
+import com.pichillilorenzo.flutter_inappwebview.types.UserScript;
+import com.pichillilorenzo.flutter_inappwebview.types.WebMessageChannel;
+import com.pichillilorenzo.flutter_inappwebview.types.WebMessageListener;
 
 import org.json.JSONObject;
 
@@ -100,7 +100,7 @@ import io.flutter.plugin.common.MethodChannel;
 import okhttp3.OkHttpClient;
 
 import static android.content.Context.INPUT_METHOD_SERVICE;
-import static com.pichillilorenzo.flutter_inappwebview_quill.types.PreferredContentModeOptionType.fromValue;
+import static com.pichillilorenzo.flutter_inappwebview.types.PreferredContentModeOptionType.fromValue;
 
 final public class InAppWebView extends InputAwareWebView implements InAppWebViewInterface {
 
@@ -472,8 +472,8 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
     setOnLongClickListener(new OnLongClickListener() {
       @Override
       public boolean onLongClick(View v) {
-        com.pichillilorenzo.flutter_inappwebview_quill.types.HitTestResult hitTestResult =
-                com.pichillilorenzo.flutter_inappwebview_quill.types.HitTestResult.fromWebViewHitTestResult(getHitTestResult());
+        com.pichillilorenzo.flutter_inappwebview.types.HitTestResult hitTestResult =
+                com.pichillilorenzo.flutter_inappwebview.types.HitTestResult.fromWebViewHitTestResult(getHitTestResult());
         channel.invokeMethod("onLongPressHitTestResult", hitTestResult.toMap());
         return false;
       }
@@ -1244,8 +1244,8 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
   }
 
   private void sendOnCreateContextMenuEvent() {
-    com.pichillilorenzo.flutter_inappwebview_quill.types.HitTestResult hitTestResult =
-            com.pichillilorenzo.flutter_inappwebview_quill.types.HitTestResult.fromWebViewHitTestResult(getHitTestResult());
+    com.pichillilorenzo.flutter_inappwebview.types.HitTestResult hitTestResult =
+            com.pichillilorenzo.flutter_inappwebview.types.HitTestResult.fromWebViewHitTestResult(getHitTestResult());
     channel.invokeMethod("onCreateContextMenu", hitTestResult.toMap());
   }
 
@@ -1690,7 +1690,7 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
   }
 
   @Override
-  public void postWebMessage(com.pichillilorenzo.flutter_inappwebview_quill.types.WebMessage message, Uri targetOrigin, ValueCallback<String> callback) throws Exception {
+  public void postWebMessage(com.pichillilorenzo.flutter_inappwebview.types.WebMessage message, Uri targetOrigin, ValueCallback<String> callback) throws Exception {
     throw new UnsupportedOperationException();
   }
 
@@ -1757,8 +1757,8 @@ final public class InAppWebView extends InputAwareWebView implements InAppWebVie
   }
 
   @Override
-  public void getHitTestResult(ValueCallback<com.pichillilorenzo.flutter_inappwebview_quill.types.HitTestResult> callback) {
-    callback.onReceiveValue(com.pichillilorenzo.flutter_inappwebview_quill.types.HitTestResult.fromWebViewHitTestResult(getHitTestResult()));
+  public void getHitTestResult(ValueCallback<com.pichillilorenzo.flutter_inappwebview.types.HitTestResult> callback) {
+    callback.onReceiveValue(com.pichillilorenzo.flutter_inappwebview.types.HitTestResult.fromWebViewHitTestResult(getHitTestResult()));
   }
 
   @Override

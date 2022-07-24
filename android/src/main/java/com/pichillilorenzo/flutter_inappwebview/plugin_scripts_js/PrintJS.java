@@ -1,7 +1,7 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js;
+package com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js;
 
-import com.pichillilorenzo.flutter_inappwebview_quill.types.PluginScript;
-import com.pichillilorenzo.flutter_inappwebview_quill.types.UserScriptInjectionTime;
+import com.pichillilorenzo.flutter_inappwebview.types.PluginScript;
+import com.pichillilorenzo.flutter_inappwebview.types.UserScriptInjectionTime;
 
 public class PrintJS {
   public static final String PRINT_JS_PLUGIN_SCRIPT_GROUP_NAME = "IN_APP_WEBVIEW_PRINT_JS_PLUGIN_SCRIPT";

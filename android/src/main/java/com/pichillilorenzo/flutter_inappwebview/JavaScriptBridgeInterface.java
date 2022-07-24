@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill;
+package com.pichillilorenzo.flutter_inappwebview;
 
 import android.os.Build;
 import android.os.Handler;
@@ -7,8 +7,8 @@ import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 
-import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebView;
-import com.pichillilorenzo.flutter_inappwebview_quill.plugin_scripts_js.JavaScriptBridgeJS;
+import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebView;
+import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.JavaScriptBridgeJS;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill;
+package com.pichillilorenzo.flutter_inappwebview;
 
 import android.os.Build;
 import android.webkit.CookieManager;

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill;
+package com.pichillilorenzo.flutter_inappwebview;
 
 import androidx.annotation.Nullable;
 import androidx.webkit.WebViewFeature;

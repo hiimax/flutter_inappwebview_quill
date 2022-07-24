@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.types;
+package com.pichillilorenzo.flutter_inappwebview.types;
 
 public enum PreferredContentModeOptionType {
   RECOMMENDED (0),

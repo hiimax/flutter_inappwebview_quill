@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.content_blocker;
+package com.pichillilorenzo.flutter_inappwebview.content_blocker;
 
 public enum ContentBlockerActionType {
     BLOCK ("block"),

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill.types;
+package com.pichillilorenzo.flutter_inappwebview.types;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,9 +8,9 @@ import android.webkit.ValueCallback;
 import android.webkit.WebMessage;
 import android.webkit.WebView;
 
-import com.pichillilorenzo.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview_quill.in_app_browser.InAppBrowserDelegate;
-import com.pichillilorenzo.flutter_inappwebview_quill.in_app_webview.InAppWebViewOptions;
+import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
+import com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserDelegate;
+import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebViewOptions;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -81,7 +81,7 @@ public interface InAppWebViewInterface {
   WebMessageChannel createCompatWebMessageChannel();
   WebMessageChannel createWebMessageChannel(ValueCallback<WebMessageChannel> callback);
   void postWebMessage(WebMessage message, Uri targetOrigin);
-  void postWebMessage(com.pichillilorenzo.flutter_inappwebview_quill.types.WebMessage message, Uri targetOrigin, ValueCallback<String> callback) throws Exception;
+  void postWebMessage(com.pichillilorenzo.flutter_inappwebview.types.WebMessage message, Uri targetOrigin, ValueCallback<String> callback) throws Exception;
   void addWebMessageListener(WebMessageListener webMessageListener) throws Exception;
   boolean canScrollVertically();
   boolean canScrollHorizontally();

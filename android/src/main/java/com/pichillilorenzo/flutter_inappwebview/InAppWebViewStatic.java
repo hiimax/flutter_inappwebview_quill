@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview_quill;
+package com.pichillilorenzo.flutter_inappwebview;
 
 import android.content.pm.PackageInfo;
 import android.os.Build;
@@ -21,7 +21,7 @@ import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 
 public class InAppWebViewStatic implements MethodChannel.MethodCallHandler {
-  
+
   protected static final String LOG_TAG = "InAppWebViewStatic";
   public MethodChannel channel;
   @Nullable
