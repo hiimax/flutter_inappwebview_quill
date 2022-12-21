@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.in_app_webview;
+package com.garv.flutter_inappwebview_quill.in_app_webview;
 
 import static android.hardware.display.DisplayManager.DisplayListener;
 

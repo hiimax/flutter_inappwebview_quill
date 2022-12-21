@@ -24,7 +24,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.pichillilorenzo.flutter_inappwebview
+        package: com.garv.flutter_inappwebview_quill
         pluginClass: InAppWebViewFlutterPlugin
       ios:
         pluginClass: InAppWebViewFlutterPlugin

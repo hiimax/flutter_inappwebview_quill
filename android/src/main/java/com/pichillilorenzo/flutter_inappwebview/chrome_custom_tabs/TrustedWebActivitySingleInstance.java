@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs;
+package com.garv.flutter_inappwebview_quill.chrome_custom_tabs;
 
 public class TrustedWebActivitySingleInstance extends TrustedWebActivity {
 

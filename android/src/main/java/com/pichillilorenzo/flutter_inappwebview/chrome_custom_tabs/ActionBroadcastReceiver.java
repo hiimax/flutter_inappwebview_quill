@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs;
+package com.garv.flutter_inappwebview_quill.chrome_custom_tabs;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -12,9 +12,9 @@ import io.flutter.plugin.common.MethodChannel;
 
 public class ActionBroadcastReceiver extends BroadcastReceiver {
   protected static final String LOG_TAG = "ActionBroadcastReceiver";
-  public static final String KEY_ACTION_ID = "com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ACTION_ID";
-  public static final String KEY_ACTION_VIEW_ID = "com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.ACTION_VIEW_ID";
-  public static final String CHROME_MANAGER_ID = "com.pichillilorenzo.flutter_inappwebview.ChromeCustomTabs.CHROME_MANAGER_ID";
+  public static final String KEY_ACTION_ID = "com.garv.flutter_inappwebview_quill.ChromeCustomTabs.ACTION_ID";
+  public static final String KEY_ACTION_VIEW_ID = "com.garv.flutter_inappwebview_quill.ChromeCustomTabs.ACTION_VIEW_ID";
+  public static final String CHROME_MANAGER_ID = "com.garv.flutter_inappwebview_quill.ChromeCustomTabs.CHROME_MANAGER_ID";
   public static final String KEY_URL_TITLE = "android.intent.extra.SUBJECT";
 
   @Override

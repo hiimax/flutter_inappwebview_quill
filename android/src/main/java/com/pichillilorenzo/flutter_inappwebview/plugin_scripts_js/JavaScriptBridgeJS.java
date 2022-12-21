@@ -1,7 +1,7 @@
-package com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js;
+package com.garv.flutter_inappwebview_quill.plugin_scripts_js;
 
-import com.pichillilorenzo.flutter_inappwebview.types.PluginScript;
-import com.pichillilorenzo.flutter_inappwebview.types.UserScriptInjectionTime;
+import com.garv.flutter_inappwebview_quill.types.PluginScript;
+import com.garv.flutter_inappwebview_quill.types.UserScriptInjectionTime;
 
 public class JavaScriptBridgeJS {
   public static final String JAVASCRIPT_BRIDGE_NAME = "flutter_inappwebview_quill";

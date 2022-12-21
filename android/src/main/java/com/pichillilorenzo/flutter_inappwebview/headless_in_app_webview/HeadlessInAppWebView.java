@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.headless_in_app_webview;
+package com.garv.flutter_inappwebview_quill.headless_in_app_webview;
 
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,10 +7,10 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview.Util;
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.FlutterWebView;
-import com.pichillilorenzo.flutter_inappwebview.types.Size2D;
+import com.garv.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
+import com.garv.flutter_inappwebview_quill.Util;
+import com.garv.flutter_inappwebview_quill.in_app_webview.FlutterWebView;
+import com.garv.flutter_inappwebview_quill.types.Size2D;
 
 import java.util.HashMap;
 import java.util.Map;

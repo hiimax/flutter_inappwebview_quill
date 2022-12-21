@@ -19,7 +19,7 @@
  *
  */
 
-package com.pichillilorenzo.flutter_inappwebview.in_app_browser;
+package com.garv.flutter_inappwebview_quill.in_app_browser;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -35,7 +35,7 @@ import android.webkit.MimeTypeMap;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
+import com.garv.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
 
 import java.io.Serializable;
 import java.util.ArrayList;

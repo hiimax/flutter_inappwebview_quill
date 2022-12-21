@@ -1,9 +1,9 @@
-package com.pichillilorenzo.flutter_inappwebview.credential_database;
+package com.garv.flutter_inappwebview_quill.credential_database;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import com.pichillilorenzo.flutter_inappwebview.types.URLCredential;
+import com.garv.flutter_inappwebview_quill.types.URLCredential;
 
 import java.util.ArrayList;
 import java.util.List;

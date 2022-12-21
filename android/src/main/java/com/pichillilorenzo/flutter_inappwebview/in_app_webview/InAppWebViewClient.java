@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.in_app_webview;
+package com.garv.flutter_inappwebview_quill.in_app_webview;
 
 import android.annotation.TargetApi;
 import android.graphics.Bitmap;
@@ -25,18 +25,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
-import com.pichillilorenzo.flutter_inappwebview.Util;
-import com.pichillilorenzo.flutter_inappwebview.credential_database.CredentialDatabase;
-import com.pichillilorenzo.flutter_inappwebview.in_app_browser.InAppBrowserDelegate;
-import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.JavaScriptBridgeJS;
-import com.pichillilorenzo.flutter_inappwebview.types.ClientCertChallenge;
-import com.pichillilorenzo.flutter_inappwebview.types.HttpAuthenticationChallenge;
-import com.pichillilorenzo.flutter_inappwebview.types.NavigationAction;
-import com.pichillilorenzo.flutter_inappwebview.types.NavigationActionPolicy;
-import com.pichillilorenzo.flutter_inappwebview.types.ServerTrustChallenge;
-import com.pichillilorenzo.flutter_inappwebview.types.URLCredential;
-import com.pichillilorenzo.flutter_inappwebview.types.URLProtectionSpace;
-import com.pichillilorenzo.flutter_inappwebview.types.URLRequest;
+import com.garv.flutter_inappwebview_quill.Util;
+import com.garv.flutter_inappwebview_quill.credential_database.CredentialDatabase;
+import com.garv.flutter_inappwebview_quill.in_app_browser.InAppBrowserDelegate;
+import com.garv.flutter_inappwebview_quill.plugin_scripts_js.JavaScriptBridgeJS;
+import com.garv.flutter_inappwebview_quill.types.ClientCertChallenge;
+import com.garv.flutter_inappwebview_quill.types.HttpAuthenticationChallenge;
+import com.garv.flutter_inappwebview_quill.types.NavigationAction;
+import com.garv.flutter_inappwebview_quill.types.NavigationActionPolicy;
+import com.garv.flutter_inappwebview_quill.types.ServerTrustChallenge;
+import com.garv.flutter_inappwebview_quill.types.URLCredential;
+import com.garv.flutter_inappwebview_quill.types.URLProtectionSpace;
+import com.garv.flutter_inappwebview_quill.types.URLRequest;
 
 import java.io.ByteArrayInputStream;
 import java.net.URI;

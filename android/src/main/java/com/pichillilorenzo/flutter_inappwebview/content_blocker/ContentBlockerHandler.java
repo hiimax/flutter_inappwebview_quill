@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.content_blocker;
+package com.garv.flutter_inappwebview_quill.content_blocker;
 
 import android.os.Build;
 import android.os.Handler;
@@ -6,8 +6,8 @@ import android.os.Looper;
 import android.util.Log;
 import android.webkit.WebResourceResponse;
 
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebView;
-import com.pichillilorenzo.flutter_inappwebview.Util;
+import com.garv.flutter_inappwebview_quill.in_app_webview.InAppWebView;
+import com.garv.flutter_inappwebview_quill.Util;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

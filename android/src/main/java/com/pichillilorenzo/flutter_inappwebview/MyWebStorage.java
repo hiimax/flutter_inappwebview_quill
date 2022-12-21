@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview;
+package com.garv.flutter_inappwebview_quill;
 
 import android.webkit.ValueCallback;
 import android.webkit.WebStorage;

@@ -19,12 +19,12 @@
  *
  */
 
-package com.pichillilorenzo.flutter_inappwebview.headless_in_app_webview;
+package com.garv.flutter_inappwebview_quill.headless_in_app_webview;
 
 import androidx.annotation.Nullable;
 
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.FlutterWebView;
+import com.garv.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
+import com.garv.flutter_inappwebview_quill.in_app_webview.FlutterWebView;
 
 import java.util.Collection;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.chrome_custom_tabs;
+package com.garv.flutter_inappwebview_quill.chrome_custom_tabs;
 
 import android.app.Activity;
 import android.app.PendingIntent;
@@ -17,9 +17,9 @@ import androidx.browser.customtabs.CustomTabsIntent;
 import androidx.browser.customtabs.CustomTabsService;
 import androidx.browser.customtabs.CustomTabsSession;
 
-import com.pichillilorenzo.flutter_inappwebview.R;
-import com.pichillilorenzo.flutter_inappwebview.types.CustomTabsActionButton;
-import com.pichillilorenzo.flutter_inappwebview.types.CustomTabsMenuItem;
+import com.garv.flutter_inappwebview_quill.R;
+import com.garv.flutter_inappwebview_quill.types.CustomTabsActionButton;
+import com.garv.flutter_inappwebview_quill.types.CustomTabsMenuItem;
 
 import java.util.ArrayList;
 import java.util.HashMap;

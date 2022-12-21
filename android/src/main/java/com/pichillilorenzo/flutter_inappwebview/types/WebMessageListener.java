@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.types;
+package com.garv.flutter_inappwebview_quill.types;
 
 import android.net.Uri;
 import android.text.TextUtils;
@@ -12,9 +12,9 @@ import androidx.webkit.WebMessageCompat;
 import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
 
-import com.pichillilorenzo.flutter_inappwebview.Util;
-import com.pichillilorenzo.flutter_inappwebview.in_app_webview.InAppWebView;
-import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.JavaScriptBridgeJS;
+import com.garv.flutter_inappwebview_quill.Util;
+import com.garv.flutter_inappwebview_quill.in_app_webview.InAppWebView;
+import com.garv.flutter_inappwebview_quill.plugin_scripts_js.JavaScriptBridgeJS;
 
 import java.util.ArrayList;
 import java.util.HashMap;

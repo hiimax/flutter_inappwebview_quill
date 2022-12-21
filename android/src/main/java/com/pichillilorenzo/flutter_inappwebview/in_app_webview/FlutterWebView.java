@@ -1,4 +1,4 @@
-package com.pichillilorenzo.flutter_inappwebview.in_app_webview;
+package com.garv.flutter_inappwebview_quill.in_app_webview;
 
 import android.content.Context;
 import android.hardware.display.DisplayManager;
@@ -17,14 +17,14 @@ import androidx.annotation.NonNull;
 import androidx.webkit.WebViewCompat;
 import androidx.webkit.WebViewFeature;
 
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewFlutterPlugin;
-import com.pichillilorenzo.flutter_inappwebview.InAppWebViewMethodHandler;
-import com.pichillilorenzo.flutter_inappwebview.plugin_scripts_js.JavaScriptBridgeJS;
-import com.pichillilorenzo.flutter_inappwebview.pull_to_refresh.PullToRefreshLayout;
-import com.pichillilorenzo.flutter_inappwebview.pull_to_refresh.PullToRefreshOptions;
-import com.pichillilorenzo.flutter_inappwebview.types.PlatformWebView;
-import com.pichillilorenzo.flutter_inappwebview.types.URLRequest;
-import com.pichillilorenzo.flutter_inappwebview.types.UserScript;
+import com.garv.flutter_inappwebview_quill.InAppWebViewFlutterPlugin;
+import com.garv.flutter_inappwebview_quill.InAppWebViewMethodHandler;
+import com.garv.flutter_inappwebview_quill.plugin_scripts_js.JavaScriptBridgeJS;
+import com.garv.flutter_inappwebview_quill.pull_to_refresh.PullToRefreshLayout;
+import com.garv.flutter_inappwebview_quill.pull_to_refresh.PullToRefreshOptions;
+import com.garv.flutter_inappwebview_quill.types.PlatformWebView;
+import com.garv.flutter_inappwebview_quill.types.URLRequest;
+import com.garv.flutter_inappwebview_quill.types.UserScript;
 
 import java.io.IOException;
 import java.util.ArrayList;
