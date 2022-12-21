@@ -1,3 +1,7 @@
+## 5.4.7
+
+- Updated reverse domain name due to conflict issue
+
 ## 5.4.6
 
 - Fix podspec issue
